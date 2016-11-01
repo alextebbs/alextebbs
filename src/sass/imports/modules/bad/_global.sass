@@ -1,0 +1,78 @@
+[data-current-theme="bad"]
+  padding: 48px
+  background: linear-gradient(GreenYellow, Aquamarine)
+  border: 20px solid DarkOliveGreen
+  border-right-color: magenta
+
+  .about-this-design-change
+    display: none
+
+  *
+    font-family: serif
+
+  a
+    color: blue
+    text-decoration: underline
+
+  #{$all-header-elements}
+    font-size: 16px
+
+  .my-name
+    *
+      display: inline-block
+
+    .tagline-top, .tagline-bottom, h2
+      padding-right: 24px
+      font-size: 24px
+
+    .tagline-bottom:after
+      content: ' Good Luck!'
+
+  .home-intro
+    margin-left: 240px
+    margin-right: 100px
+    background: white(0.3)
+
+    h2
+      color: red
+      font-size: 48px
+      font-family: 'Comic Sans MS'
+      margin-top: 72px
+
+      span
+        display: none
+
+      &:after
+        content: '!!!!!!!!!!!'
+
+    p
+      color: blue
+      font-size: 24px
+
+      a
+        color: red
+
+  .main-navigation
+    position: fixed
+    top: 24px
+    right: 24px
+    text-align: right
+    color: #fff
+    text-transform: uppercase
+    letter-spacing: 12px
+
+    a:hover
+      opacity: 0
+
+  .home-contact
+    margin-bottom: 400px
+
+    ul
+      li
+        +clearfix
+
+        .label
+          float: left
+
+        .value
+          float: right

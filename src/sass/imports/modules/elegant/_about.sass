@@ -1,0 +1,121 @@
+[data-current-theme="elegant"]
+  .main-section
+    margin: 0px auto
+
+    #{$all-header-elements}
+      text-align: center
+
+    #{$all-body-text-elements}, .text-container li
+      font-size: 24px
+      line-height: 38px
+      font-weight: 100
+
+    p
+      text-align: justify
+
+    p, li
+      a
+        border-bottom: 2px solid #000
+        color: #000
+        font-weight: bold
+
+        &:hover
+          background: $pastel-yellow
+
+  .home-section
+    margin: 0px auto
+    margin-bottom: 120px
+    position: relative
+    padding-bottom: 96px
+
+    // &:before
+      content: ''
+      top: 100%
+      left: 0px
+      right: 0px
+      height: 1px
+      background: #000
+      position: absolute
+
+    // &:after
+      content: ''
+      top: 100%
+      left: 50%
+      transform: translate(-50%, -50%) rotate(45deg)
+      height: 9px
+      width: 9px
+      background: #000
+      position: absolute
+
+  .home-intro
+    max-width: 640px
+    padding-top: 48px
+
+    h2
+      margin-bottom: 48px
+
+  .home-portfolio
+    max-width: 960px
+
+  .home-contact
+    text-align: center
+
+    li
+      margin-bottom: 24px
+
+    .label
+      &:after
+        content: '\2014'
+        padding-left: 4px
+        padding-right: 4px
+
+  .home-portfolio
+    h2
+      text-align: left
+      max-width: 640px
+      position: relative
+      margin: 0px auto
+      margin-bottom: 24px
+
+      a
+        position: absolute
+        right: 0px
+        bottom: 0px
+        font-size: 24px
+        color: #000
+        font-weight: bold
+
+        &:hover
+          background: $pastel-yellow
+
+  .portfolio-item-meta
+    text-align: left
+    max-width: 640px
+    position: relative
+    margin: 0px auto
+    margin-bottom: 18px
+    border-bottom: 1px solid #000
+    padding-bottom: 18px
+    padding-top: 12px
+    position: relative
+
+    h3, p, a
+      margin-bottom: 0px
+      display: inline-block
+      font-size: 20px
+
+    h3
+      &:after
+        content: '\2014'
+        padding-left: 4px
+        padding-right: 4px
+
+    a
+      position: absolute
+      right: 0px
+      color: #000
+      bottom: 24px
+      font-weight: bold
+
+      &:hover
+        background: $pastel-yellow

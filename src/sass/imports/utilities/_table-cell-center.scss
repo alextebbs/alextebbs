@@ -1,0 +1,13 @@
+// Centers an inner element using the table cell method. Requires a height to
+// be set for the container element.
+
+@mixin table-cell-center($height, $selector:'.inner') {
+  height: $height;
+  display: table;
+  width: 100%;
+
+  #{$selector} {
+    vertical-align: middle;
+    display: table-cell;
+  }
+}

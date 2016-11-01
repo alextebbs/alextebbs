@@ -1,0 +1,21 @@
+// This is sooooo easy
+=below($breakpoint)
+  @media (max-width: $breakpoint)
+    @content
+
+=above($breakpoint)
+  @media (min-width: $breakpoint + 1px)
+    @content
+
+=between($breakpoint-one, $breakpoint-two)
+  @media (min-width: $breakpoint-one + 1px) and (max-width: $breakpoint-two)
+    @content
+
+// Breakpoints (change as needed)
+
+// Width
+$smaller-width: 460px
+$small-width: 670px
+$large-width: 960px
+$larger-width: 1440px
+$widescreen-width: 1920px

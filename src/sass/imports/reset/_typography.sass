@@ -1,0 +1,33 @@
+// This file provides the groudwork for well organized typography. By default,
+// text is "unstyled" without the proper container, meaning that all headers
+// and lists are reset to appear as normal block level elements.
+
+// 16x24 baby. Reset All The Things.
+body, #{$all-text-elements}
+  line-height: $baseline
+  font-size: $font-size
+  font-family: $base-font-stack
+  font-weight: 400
+
+#{$all-text-elements}
+  margin: 0px
+  padding: 0px
+
+// No styling on lists unless within a container with base-typography
+#{$all-list-elements}
+  list-style: none
+
+// Use this mixin to style text within a container
+=typography
+  // Give body text a default bottom margin.
+  #{$all-body-text-elements},
+  #{$all-list-elements}
+    margin-bottom: 24px
+
+  // Setup header styles. Define these in config/typography.
+  @for $i from 1 through length($all-header-elements)
+    h#{$i}
+      @extend %heading-#{$i}
+
+.text-container
+  +typography

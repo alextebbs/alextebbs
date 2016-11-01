@@ -1,0 +1,10 @@
+// Mixin to create overlays over a div using :before or :after
+
+=overlay($type:after, $content:'')
+  position: relative
+
+  &:#{$type}
+    content: $content
+    +position-fill
+    pointer-events: none
+    @content

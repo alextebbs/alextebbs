@@ -1,0 +1,14 @@
+// When used on a <ul> element, this would create a pipe character between each
+// <li> element.
+
+@mixin text-separator($char: '|', $pad:0px) {
+  &:after {
+    content: $char;
+    padding-left: $pad;
+    padding-right: $pad;
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+}

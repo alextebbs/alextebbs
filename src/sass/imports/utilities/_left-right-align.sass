@@ -1,0 +1,23 @@
+// This takes an <li> with 2 child elements
+// and makes them line up next to each other
+// one on the left, and the next on the right
+
+// <li>
+//   <anything>Left</anything>
+//   <div class="whatever">Right</div>
+// </li>
+
+%left-and-right-aligned
+  @extend %list-reset
+
+  li
+    +clearfix
+
+    // Trying to be markup agnostic
+    & > *:nth-child(1)
+      float: left
+      text-align: left
+
+    & > *:nth-child(2)
+      float: right
+      text-align: right

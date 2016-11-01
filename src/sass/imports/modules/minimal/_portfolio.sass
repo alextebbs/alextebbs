@@ -1,0 +1,28 @@
+body[data-current-theme="minimal"]
+  .portfolio-item
+    border-bottom: 1px solid #000
+
+  .portfolio-item-meta
+    position: relative
+    height: 32px
+
+    a
+      border-bottom: none
+      position: absolute
+      right: 0px
+
+      &:after
+        content: '\203A'
+        font-weight: normal
+        font-size: 18px
+        padding-left: 4px
+
+    h3, p
+      display: inline-block
+
+    h3
+      &:after
+        content: '\2014'
+        padding-left: 12px
+        padding-right: 12px
+        display: inline-block

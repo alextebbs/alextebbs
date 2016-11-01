@@ -1,0 +1,13 @@
+{
+  "name": "16x24",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "*",
+    "page": "*",
+    "flexslider": "*"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": "~2.1.0"
+  }
+}

@@ -1,0 +1,108 @@
+$form-gutter: $bl / 2
+
+.form-row, %form-row
+  +clearfix
+  margin-bottom: $form-gutter
+
+  #{$all-input-elements}, textarea
+    margin-bottom: 0px
+
+#{$all-input-elements}, textarea
+  border: none
+  background-color: $grey-8
+  margin-bottom: $form-gutter
+  border: 1px solid $grey-7
+
+  &:hover
+    background-color: $grey-9
+
+  +placeholder
+    color: $grey-5
+
+  &.full-width
+    width: 100%
+
+  &:active, &:focus
+    background-color: #fff
+    color: $grey-2
+    outline: none
+
+    +placeholder
+      color: $grey-5
+
+  &[disabled]
+    background-color: $grey-7
+
+    &:active, &:focus
+      background-color: $grey-7
+      cursor: default
+      box-shadow: none
+
+#{$all-input-elements}
+  height: bl(1.5)
+  padding: 0px bl(.5)
+
+textarea
+  padding: bl(.5)
+  font-size: $fs
+  margin-bottom: $form-gutter
+  min-width: 300px
+  min-height: bl(5)
+
+.button-row
+  margin-left: -($form-gutter / 2)
+  margin-right: -($form-gutter / 2)
+  margin-bottom: $form-gutter
+
+  &.right-align
+    text-align: right
+
+  &.left-align
+    text-align: left
+
+  *
+    margin-left: $form-gutter / 2
+    margin-right: $form-gutter / 2
+
+form
+  .full-width
+    width: 100%
+
+  .large-input
+    padding-left: 18px
+    padding-right: 18px
+    font-size: 28px
+    line-height: 36px
+    height: 64px
+    font-weight: 300
+
+  textarea.large-input
+    height: 240px
+    font-size: 22px
+
+  label
+    margin-top: bl(.5)
+    display: block
+
+    &.large-label
+      font-size: 20px
+
+  .form-row.split
+    margin-left: -($form-gutter / 2)
+    margin-right: -($form-gutter / 2)
+
+    .split-item
+      width: 50%
+      float: left
+      padding-left: $form-gutter / 2
+      padding-right: $form-gutter / 2
+
+      &:last-child
+        float: right
+
+      &.third
+        width: 33.33333333%
+
+      #{$all-input-elements}
+        width: 100%
+        margin-bottom: 0px

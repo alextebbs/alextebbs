@@ -1,0 +1,82 @@
+@keyframes fadeIn
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+.theme-select
+  position: fixed
+  left: 50%
+  top: 50%
+  transform: translateX(-50%) translateY(-50%)
+  text-align: center
+  font-family: "Inconsolata", monospace !important
+  font-weight: 100 !important
+  padding: 12px 24px !important
+  background: #fff !important
+  width: 260px
+  display: none
+  z-index: 999
+
+  .theme-select-is-active &
+    display: block
+
+  *
+    font-family: "Inconsolata", monospace !important
+
+  .tagline-top
+    text-transform: uppercase !important
+    letter-spacing: 3px !important
+    font-size: 14px !important
+    color: $cool-grey-7 !important
+
+  .tagline-bottom
+    font-size: 14px !important
+    font-weight: 100 !important
+    color: #000 !important
+
+  h1
+    text-transform: uppercase !important
+    padding-top: 18px !important
+    padding-bottom: 18px !important
+    font-weight: 300 !important
+    font-size: 16px !important
+
+  .first-time &
+    .tagline-top, .tagline-bottom, h1
+      animation: fadeIn 1s
+      animation-fill-mode: forwards
+      opacity: 0
+
+    h1
+      animation-delay: 0.5s
+
+    .tagline-top
+      animation-delay: 5s
+
+    .tagline-bottom
+      animation-delay: 4s
+
+  a
+    display: inline-block !important
+    padding: 1px 3px !important
+    color: #000 !important
+    text-decoration: none !important
+    border-bottom: none !important
+
+    &:hover, &.is-active
+      background-color: #000 !important
+      color: #fff !important
+
+  .space
+    width: 8px !important
+    display: inline-block !important
+
+[data-current-theme="default"]
+  .main-header, .main-section
+    display: none
+
+body:not([data-current-theme="default"])
+  .theme-select
+    border: 1px solid #000

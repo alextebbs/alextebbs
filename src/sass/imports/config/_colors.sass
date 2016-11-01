@@ -1,0 +1,130 @@
+// --------------------------------------------------------------------------
+// Default 16x24 Colors
+// --------------------------------------------------------------------------
+
+$black: #000 !default
+$white: #fff !default
+$teal: #00bd9c !default
+$dark-teal: #00a185 !default
+
+$green: #1ece6d !default
+$dark-green: #1aaf5d !default
+
+$purple: #9c56b8 !default
+$dark-purple: #8f3faf !default
+
+$asphalt: #33485f !default
+$dark-asphalt: #2b3e51 !default
+
+$yellow: lighten(#f2c500, 10%) !default
+$dark-yellow: #f2c500 !default
+
+$orange: #e87e03 !default
+$dark-orange: #d55400 !default
+
+$red: #e94b35 !default
+$dark-red: #c23824 !default
+
+// --------------------------------------------------------------------------
+// Default 16x24 Greys
+// --------------------------------------------------------------------------
+
+$black: #000 !default
+$white: #fff !default
+
+$cool-grey-hue: 200
+
+$cool-grey-9: hsl($cool-grey-hue, 10, 95)
+$cool-grey-8: hsl($cool-grey-hue, 15, 90)
+$cool-grey-7: hsl($cool-grey-hue, 10, 70)
+$cool-grey-6: hsl($cool-grey-hue, 10, 60)
+$cool-grey-5: hsl($cool-grey-hue, 7.5, 50)
+$cool-grey-4: hsl($cool-grey-hue, 10, 40)
+$cool-grey-3: hsl($cool-grey-hue, 10, 35)
+$cool-grey-2: hsl($cool-grey-hue, 10, 30)
+$cool-grey-1: hsl($cool-grey-hue, 10, 22.5)
+$cool-grey-0: hsl($cool-grey-hue, 10, 15)
+
+$warm-grey-hue: 30
+
+$warm-grey-9: hsl($warm-grey-hue, 7.5, 90)
+$warm-grey-8: hsl($warm-grey-hue, 7.5, 85)
+$warm-grey-7: hsl($warm-grey-hue, 7.5, 80)
+$warm-grey-6: hsl($warm-grey-hue, 7.5, 70)
+$warm-grey-5: hsl($warm-grey-hue, 5, 55)
+$warm-grey-4: hsl($warm-grey-hue, 5, 45)
+$warm-grey-3: hsl($warm-grey-hue, 5, 35)
+$warm-grey-2: hsl($warm-grey-hue, 7.5, 30)
+$warm-grey-1: hsl($warm-grey-hue, 7.5, 22.5)
+$warm-grey-0: hsl($warm-grey-hue, 7.5, 15)
+
+$neutral-grey-hue: 255
+
+$neutral-grey-9: hsl($neutral-grey-hue, 0, 95)
+$neutral-grey-8: hsl($neutral-grey-hue, 0, 90)
+$neutral-grey-7: hsl($neutral-grey-hue, 0, 80)
+$neutral-grey-6: hsl($neutral-grey-hue, 0, 65)
+$neutral-grey-5: hsl($neutral-grey-hue, 0, 55)
+$neutral-grey-4: hsl($neutral-grey-hue, 0, 45)
+$neutral-grey-3: hsl($neutral-grey-hue, 0, 35)
+$neutral-grey-2: hsl($neutral-grey-hue, 0, 30)
+$neutral-grey-1: hsl($neutral-grey-hue, 0, 22.5)
+$neutral-grey-0: hsl($neutral-grey-hue, 0, 15)
+
+// Do this so these variables are available outside the @if statements below
+$grey-9: null
+$grey-8: null
+$grey-7: null
+$grey-6: null
+$grey-5: null
+$grey-4: null
+$grey-3: null
+$grey-2: null
+$grey-1: null
+
+// This variable controls the default grey palette used.
+
+$default-grey-palette: 'cool'
+
+@if $default-grey-palette == 'cool'
+  $grey-9: $cool-grey-9 !global
+  $grey-8: $cool-grey-8 !global
+  $grey-7: $cool-grey-7 !global
+  $grey-6: $cool-grey-6 !global
+  $grey-5: $cool-grey-5 !global
+  $grey-4: $cool-grey-4 !global
+  $grey-3: $cool-grey-3 !global
+  $grey-2: $cool-grey-2 !global
+  $grey-1: $cool-grey-1 !global
+
+@if $default-grey-palette == 'warm'
+  $grey-9: $warm-grey-9 !global
+  $grey-8: $warm-grey-8 !global
+  $grey-7: $warm-grey-7 !global
+  $grey-6: $warm-grey-6 !global
+  $grey-5: $warm-grey-5 !global
+  $grey-4: $warm-grey-4 !global
+  $grey-3: $warm-grey-3 !global
+  $grey-2: $warm-grey-2 !global
+  $grey-1: $warm-grey-1 !global
+
+@if $default-grey-palette == 'neutral'
+  $grey-9: $neutral-grey-9 !global
+  $grey-8: $neutral-grey-8 !global
+  $grey-7: $neutral-grey-7 !global
+  $grey-6: $neutral-grey-6 !global
+  $grey-5: $neutral-grey-5 !global
+  $grey-4: $neutral-grey-4 !global
+  $grey-3: $neutral-grey-3 !global
+  $grey-2: $neutral-grey-2 !global
+  $grey-1: $neutral-grey-1 !global
+
+// --------------------------------------------------------------------------
+// Custom Colors
+// --------------------------------------------------------------------------
+
+// Place your own custom colors here! Or edit the colors above! Whatever!
+
+$pastel-blue: #a9e0ff
+$pastel-yellow: #feff95
+$pastel-pink: #ffbefe

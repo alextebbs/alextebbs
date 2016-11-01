@@ -1,0 +1,51 @@
+{
+    "base_key":"tba_frontend",
+    "hosts":{
+        "www":{
+            "note":"Current manually managed via .conf files"
+        }
+    },
+    "environment":{
+        "production":{
+            "deployment": {
+                "host":"compliance-today.com",
+                "host_user":"ec2-user",
+                "keyname":"gamification-next.pem",
+                "path":"/var/www/tba/production/",
+                "origin":"git@bitbucket.org:easci/tba-frontend.git",
+                "post_commands": [
+                    "npm install --production;gulp install"
+                ]
+            }
+        },
+        "staging":{
+            "deployment": {
+                "host":"compliance-today.com",
+                "host_user":"ec2-user",
+                "keyname":"gamification-next.pem",
+                "path":"/var/www/tba/staging/",
+                "branch": "staging",
+                "origin":"git@bitbucket.org:easci/tba-frontend.git",
+                "branch": "staging",
+                "post_commands": [
+                    "npm install --production;gulp install"
+                ]
+            }               
+        },                
+        "development":{
+            "deployment": {
+                "host":"compliance-today.com",
+                "host_user":"ec2-user",
+                "keyname":"gamification-next.pem",
+                "path":"/var/www/tba/devel/",
+                "branch": "dev",
+                "origin":"git@bitbucket.org:easci/tba-frontend.git",
+                "branch": "dev",
+                "post_commands": [
+                    "npm install --production;gulp install"
+                ]
+            }            
+        },
+        "local":{}
+    }
+}
