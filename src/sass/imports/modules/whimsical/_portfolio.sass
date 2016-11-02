@@ -1,1 +1,51 @@
-[data-current-theme="skeu"]
+[data-current-theme="whimsical"]
+  .portfolio-item
+    transition: transform 0.2s
+    position: relative
+
+    &:hover
+      transform: scale(1.035)
+
+      h3, p
+        color: $blue
+
+      .see-more
+        opacity: 1
+
+      .portfolio-image-wrap
+        box-shadow: 0px 0px 0px 4px $teal
+        border-radius: 24px
+
+    img
+      max-width: 100%
+      border-radius: 24px
+      display: block
+
+  .portfolio-item-meta
+    +clearfix
+    padding-top: 18px
+
+    h3
+      float: left
+
+    .tags
+      float: right
+
+    .see-more
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      z-index: 4
+      text-transform: uppercase
+      height: 36px
+      line-height: 36px
+      padding-left: 24px
+      padding-right: 24px
+      background: #fff
+      font-size: 18px
+      color: $red
+      border-radius: 18px
+      display: inline-block
+      opacity: 0
+      transition: opacity 0.2s

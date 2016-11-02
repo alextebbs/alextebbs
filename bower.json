@@ -6,7 +6,9 @@
     "page": "*",
     "flexslider": "*"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "masonry": "^4.1.1"
+  },
   "resolutions": {
     "jquery": "~2.1.0"
   }

@@ -1,3 +1,41 @@
+@keyframes colorswap
+  0%
+    color: $blue
+
+  20%
+    color: $teal
+
+  40%
+    color: $purple
+
+  60%
+    color: $orange
+
+  80%
+    color: $red
+
+  100%
+    color: $blue
+
+@keyframes wiggle
+  0%
+    transform: rotate(0deg)
+
+  20%
+    transform: rotate(5deg)
+
+  40%
+    transform: rotate(-5deg)
+
+  60%
+    transform: rotate(5deg)
+
+  80%
+    transform: rotate(-5deg)
+
+  100%
+    transform: rotate(0deg)
+
 [data-current-theme="whimsical"]
   *
     font-family: $sans-font-stack
@@ -7,3 +45,18 @@
 
   #{$all-text-elements}
     color: $grey-5
+
+  .text-container
+    #{$all-body-text-elements}, li
+      a
+        animation-name: colorswap
+        animation-duration: 20s
+        animation-iteration-count: infinite
+        display: inline-block
+        border-bottom: 2px solid
+
+        &:hover
+          animation-name: colorswap, wiggle
+          animation-duration: 20s, 0.5s
+          animation-iteration-count: infinite, 1
+
