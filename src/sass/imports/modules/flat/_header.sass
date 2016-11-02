@@ -1,1 +1,56 @@
-[data-current-theme="skeu"]
+[data-current-theme="flat"]
+  .main-header
+    padding-top: 24px
+    padding-bottom: 24px
+
+  .main-header-inner
+    +clearfix
+    max-width: 960px
+    padding-left: 24px
+    padding-right: 24px
+    margin: 0px auto
+
+  .my-name
+    float: left
+
+  .my-name-top, .my-name-bottom
+    font-size: 12px
+    text-transform: uppercase
+    letter-spacing: 1px
+
+  .my-name-inner
+    font-size: 24px
+    line-height: 32px
+
+    .space
+      display: inline-block
+      width: 6px
+
+    a
+      color: blue
+      font-weight: bold
+
+      &:hover
+        color: #000
+
+  .main-navigation
+    float: right
+
+    li
+      font-size: 18px
+      padding-left: 24px
+      display: inline-block
+      font-weight: bold
+      padding-top: 30px
+
+      a
+        color: blue
+
+        &.is-active
+          border-bottom: 2px solid
+
+          &:hover
+            color: blue
+
+        &:hover
+          color: #000

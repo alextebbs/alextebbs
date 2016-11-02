@@ -1,1 +1,48 @@
-[data-current-theme="skeu"]
+[data-current-theme="swiss"]
+  .home-section
+    max-width: 592px
+    padding-bottom: 64px
+    margin-bottom: 64px
+    border-bottom: 4px solid #000
+
+  .home-intro
+    padding-top: 72px
+    border-top: 4px solid #000
+
+    p
+      font-size: 18px
+      line-height: 30px
+
+  .home-portfolio
+    h2
+      position: relative
+
+      a
+        position: absolute
+        right: 0px
+        bottom: 10px
+        font-size: 18px
+        color: #000
+        border-bottom: 2px solid
+        line-height: 24px
+
+        &:hover
+          color: red
+
+  .home-contact
+    li
+      +clearfix
+      font-size: 18px
+      margin-bottom: 12px
+
+    .label
+      float: left
+      width: 120px
+      text-align: right
+
+      &:after
+        content: ':'
+        padding-right: 8px
+
+    .value
+      float: left

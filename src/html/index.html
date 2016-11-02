@@ -3,7 +3,7 @@
   <head>
     @include('head.html')
   </head>
-  <body data-current-theme="default" class="first-time homepage theme-select-is-active">
+  <body data-current-theme="flat" class="">
     @include('header.html')
     @include('about-this-design.html')
 
@@ -37,7 +37,7 @@
 
       function showActiveLink(ctx, next) {
         deactiveate();
-        a(ctx.path).classList.add('active');
+        a(ctx.path).classList.add('is-active');
         next();
       }
 
@@ -79,8 +79,8 @@
       }
 
       function deactiveate() {
-        var el = document.querySelector('.active')
-        if (el) el.classList.remove('active');
+        var el = document.querySelector('.is-active')
+        if (el) el.classList.remove('is-active');
       }
 
       function a(href) {
