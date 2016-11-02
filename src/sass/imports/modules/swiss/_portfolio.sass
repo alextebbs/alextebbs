@@ -7,6 +7,7 @@
     h3
       font-size: 18px
       display: inline-block
+      color: #000
 
       &:after
         content: '\2014'
@@ -16,17 +17,19 @@
     .tags
       font-size: 18px
       display: inline-block
+      color: #000
+
+    .see-more
+      float: right
+      font-size: 18px
+      color: #000
+      border-bottom: 2px solid
+      font-weight: bold
+
+    &:hover
+      h3, .tags, .see-more
+        color: red !important
 
     .portfolio-item-meta
       *
         line-height: 24px
-
-      a
-        float: right
-        font-size: 18px
-        color: #000
-        border-bottom: 2px solid
-        font-weight: bold
-
-        &:hover
-          color: red

@@ -1,1 +1,102 @@
-[data-current-theme="skeu"]
+[data-current-theme="brutalist"]
+  .portfolio
+    .portfolio-item
+      margin-bottom: 72px
+
+      &:nth-of-type(1)
+        transform: translateX(-96px)
+
+      &:nth-of-type(3)
+        transform: translateX(96px)
+
+  .portfolio-item
+    position: relative
+
+    img
+      display: block
+
+    h3, .tags
+      color: #000
+
+    h3, .tags, .see-more
+      position: absolute
+      background: #fff
+      transition: all 0.2s
+
+    &:nth-of-type(1)
+      h3
+        top: 10%
+        left: 50%
+
+      .tags
+        bottom: 10%
+        left: 30%
+
+      .see-more
+        top: 3%
+        left: 20%
+
+      &:hover
+        h3
+          top: 30%
+          left: 10%
+
+        .tags
+          bottom: 60%
+          left: 60%
+
+        .see-more
+          top: 60%
+          left: 80%
+
+    &:nth-of-type(2)
+      h3
+        top: 50%
+        left: 10%
+
+      .tags
+        bottom: 80%
+        left: 30%
+
+      .see-more
+        top: 20%
+        left: 5%
+
+      &:hover
+        h3
+          top: 4%
+          left: 3%
+
+        .tags
+          bottom: 80%
+          left: 90%
+
+        .see-more
+          top: 65%
+          left: 30%
+
+    &:nth-of-type(3)
+      h3
+        top: 50%
+        left: 10%
+
+      .tags
+        bottom: 10%
+        right: 1%
+
+      .see-more
+        top: 20%
+        left: 5%
+
+      &:hover
+        h3
+          top: 10%
+          left: 70%
+
+        .tags
+          bottom: 60%
+          right: 60%
+
+        .see-more
+          top: 80%
+          left: 10%

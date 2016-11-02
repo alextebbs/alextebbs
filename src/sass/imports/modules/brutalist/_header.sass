@@ -1,1 +1,89 @@
-[data-current-theme="skeu"]
+[data-current-theme="brutalist"]
+  .my-name-top
+    position: fixed
+    left: 40px
+    bottom: 20px
+    transform-origin: bottom left
+    transform: rotate(-90deg)
+    width: 1000px
+    text-align: left
+    font-size: 72px
+    z-index: 2
+    pointer-events: none
+
+  .my-name-bottom
+    position: fixed
+    left: 100px
+    bottom: 20px
+    transform-origin: bottom left
+    transform: rotate(-90deg)
+    width: 1000px
+    text-align: left
+    font-size: 48px
+    z-index: 2
+    pointer-events: none
+
+  // .my-name-bottom
+    position: fixed
+    right: 30px
+    bottom: 20px
+    transform-origin: bottom right
+    transform: rotate(90deg)
+    width: 1000px
+    text-align: right
+    font-size: 48px
+    z-index: 2
+    pointer-events: none
+
+  .my-name-inner
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 1
+    font-size: 200px
+    line-height: 150px
+    font-weight: bold
+    letter-spacing: -10px
+
+    a:nth-child(1)
+      margin-left: 200px
+
+    a:nth-child(6)
+      letter-spacing: -25px
+
+    a
+      color: red
+      color: aqua
+      display: inline-block
+
+      &:hover
+        color: #f0f
+
+    .space
+      display: block
+
+  .main-navigation
+    position: fixed
+    top: 7px
+    right: 20px
+    z-index: 30
+
+    li
+      display: inline-block
+      padding-left: 24px
+      font-size: 48px
+
+    a
+      color: black
+      text-transform: lowercase
+
+      &.is-active
+        color: #f0f
+
+        &:hover
+          color: #f0f
+          background: transparent
+
+      &:hover
+        color: red
+        background: #fff

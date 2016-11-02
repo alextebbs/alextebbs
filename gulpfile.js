@@ -26,13 +26,11 @@ gulp.task('browser-sync', function() {
 gulp.task('copy_images', function(){
     return gulp.src('src/images/**')
         .pipe(gulp.dest('www/images/'))
-        .pipe(gulp.dest('www-admin/images/'))
 });
 
 gulp.task('copy_fonts', function(){
     return gulp.src('src/fonts/**')
         .pipe(gulp.dest('www/fonts/'))
-        .pipe(gulp.dest('www-admin/fonts/'))
 });
 
 gulp.task('build', function(){

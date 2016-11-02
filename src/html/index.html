@@ -3,7 +3,7 @@
   <head>
     @include('head.html')
   </head>
-  <body data-current-theme="flat" class="">
+  <body data-current-theme="default" class="theme-select-is-active first-time">
     @include('header.html')
     @include('about-this-design.html')
 
@@ -24,6 +24,10 @@
     <script id="resume-template" type="text/x-template">
       @include('resume.html')
     </script>
+
+    <div class='change-theme'>
+      <a href="javascript:;" class='trigger-theme-select'></a>
+    </div>
 
     <script>
       page.base('');
@@ -79,12 +83,12 @@
       }
 
       function deactiveate() {
-        var el = document.querySelector('.is-active')
+        var el = document.querySelector('.main-navigation .is-active')
         if (el) el.classList.remove('is-active');
       }
 
       function a(href) {
-        return document.querySelector('[href="' + href + '"]');
+        return document.querySelector('.main-navigation [href="' + href + '"]');
       }
 
       function template(name) {

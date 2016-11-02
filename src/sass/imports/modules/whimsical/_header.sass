@@ -1,1 +1,102 @@
-[data-current-theme="skeu"]
+@keyframes wiggle
+  0%
+    transform: rotate(0deg)
+
+  20%
+    transform: rotate(5deg)
+
+  40%
+    transform: rotate(-5deg)
+
+  60%
+    transform: rotate(5deg)
+
+  80%
+    transform: rotate(-5deg)
+
+  100%
+    transform: rotate(0deg)
+
+[data-current-theme="whimsical"]
+  .main-header
+    max-width: 960px
+    padding-left: 24px
+    padding-right: 24px
+    margin: 0px auto
+    margin-top: 72px
+
+  .main-header-inner
+    margin-left: 120px
+    border-bottom: 4px solid $grey-8
+    +clearfix
+    padding-bottom: 24px
+
+  .my-name
+    float: left
+    position: relative
+
+    &:after
+      content: ''
+      position: absolute
+      height: 96px
+      width: 96px
+      right: 100%
+      margin-right: 24px
+      border-radius: 50%
+      top: 0px
+      background: $grey-8
+
+  .my-name-top, .my-name-bottom
+    font-size: 12px
+    text-transform: uppercase
+    letter-spacing: 1px
+    color: $grey-7
+
+  .my-name-inner
+    font-size: 42px
+    line-height: 42px
+
+    .space
+      display: inline-block
+      width: 10px
+
+    a
+      color: $purple
+      font-weight: bold
+      transition: transform 0.2s
+      display: inline-block
+
+      &:hover
+        transform: translateY(-6px)
+
+  .main-navigation
+    float: right
+
+    li
+      font-size: 24px
+      padding-left: 24px
+      display: inline-block
+      font-weight: bold
+      padding-top: 40px
+
+      a
+        display: inline-block
+
+      a:hover
+        animation: wiggle 0.5s
+
+      &:nth-child(1)
+        a
+          color: $teal
+
+      &:nth-child(2)
+        a
+          color: $blue
+
+      &:nth-child(3)
+        a
+          color: $red
+
+      &:nth-child(4)
+        a
+          color: $orange
