@@ -1,15 +1,28 @@
 body[data-current-theme="minimal"]
+  .portfolio .portfolio-item
+    margin-bottom: 96px
+
   .portfolio-item
     border-bottom: 1px solid #000
 
+    img
+      display: block
+
+    a:hover
+      .portfolio-item-meta
+        background: #000
+
   .portfolio-item-meta
     position: relative
-    height: 32px
+    height: 38px
+    line-height: 38px
 
-    a
+    .see-more
       border-bottom: none
       position: absolute
       right: 0px
+      top: 0px
+      line-height: 38px
 
       &:after
         content: '\203A'
@@ -24,5 +37,5 @@ body[data-current-theme="minimal"]
       &:after
         content: '\2014'
         padding-left: 12px
-        padding-right: 12px
+        padding-right: 6px
         display: inline-block

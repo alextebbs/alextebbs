@@ -1,0 +1,52 @@
+
+[data-current-theme="elegant"]
+  .portfolio
+    .portfolio-item
+      margin-bottom: 96px
+
+    .portfolio-intro
+      max-width: 640px
+      margin: 0px auto
+      margin-bottom: 72px
+
+  .portfolio-item
+    img
+      display: block
+      margin: 0px auto
+
+    a:hover
+      .portfolio-item-meta
+        background: $pastel-yellow
+
+  .portfolio-item-meta
+    text-align: left
+    max-width: 640px
+    position: relative
+    margin: 0px auto
+    margin-bottom: 18px
+    border-bottom: 1px solid #000
+    padding-bottom: 18px
+    padding-top: 12px
+    position: relative
+
+    h3, p, .see-more
+      margin-bottom: 0px
+      display: inline-block
+      font-size: 20px
+      color: #000
+
+    h3
+      &:after
+        content: '\2014'
+        padding-left: 4px
+        padding-right: 4px
+
+    .see-more
+      position: absolute
+      right: 0px
+      color: #000
+      bottom: 24px
+      font-weight: bold
+
+      &:hover
+        background: $pastel-yellow

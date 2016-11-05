@@ -20,12 +20,12 @@ gulp.task('browser-sync', function() {
     gulp.watch("src/html/**/*.html", ['create_html']).on('change',  browserSync.reload);
     gulp.watch("src/html/*.html", ['create_html']).on('change',  browserSync.reload);
     gulp.watch("src/js/*.js", ['create_js']).on('change',  browserSync.reload);
-    gulp.watch("src/images/*/**", ['copy_images']).on('change',  browserSync.reload);
+    gulp.watch("src/img/*/**", ['copy_images']).on('change',  browserSync.reload);
 });
 
 gulp.task('copy_images', function(){
-    return gulp.src('src/images/**')
-        .pipe(gulp.dest('www/images/'))
+    return gulp.src('src/img/**')
+        .pipe(gulp.dest('www/img/'))
 });
 
 gulp.task('copy_fonts', function(){

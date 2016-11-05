@@ -5,6 +5,7 @@ var uglify       = require('gulp-uglify');
 var js_map = [
     'src/components/jquery/dist/jquery.min.js',
     'src/components/page/page.js',
+    'src/components/masonry/dist/masonry.pkgd.min.js',
     'src/js/**',
 ];
 

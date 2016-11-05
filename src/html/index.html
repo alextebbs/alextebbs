@@ -3,7 +3,7 @@
   <head>
     @include('head.html')
   </head>
-  <body data-current-theme="whimsical" class="">
+  <body data-current-theme="elegant" class="">
     @include('header.html')
     @include('about-this-design.html')
 
@@ -55,6 +55,7 @@
 
       function showAbout(ctx) {
         render(template('about'), !ctx.init);
+        initMasonry();
       }
 
       function showPortfolio(ctx) {
@@ -76,7 +77,7 @@
           setTimeout(function(){
             el.innerHTML = html;
             el.classList.remove('hide');
-          }, 300);
+          }, 0);
         } else {
           el.innerHTML = html;
         }
@@ -95,6 +96,19 @@
         return document
           .getElementById(name + '-template')
           .innerHTML;
+      }
+
+      function initMasonry() {
+        var currentTheme = $('body').attr('data-current-theme');
+
+        if (currentTheme == 'flat' || currentTheme == 'whimsical') {
+          var grid = document.querySelector('.tools');
+          var msnry = new Masonry( grid, {
+            // options...
+            itemSelector: '.tool',
+            columnWidth: 200
+          });
+        };
       }
     </script>
   </body>

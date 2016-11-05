@@ -1,1 +1,66 @@
-[data-current-theme="skeu"]
+[data-current-theme="elegant"]
+  .home-section
+    margin: 0px auto
+    margin-bottom: 120px
+    position: relative
+    padding-bottom: 96px
+
+    // &:before
+      content: ''
+      top: 100%
+      left: 0px
+      right: 0px
+      height: 1px
+      background: #000
+      position: absolute
+
+    // &:after
+      content: ''
+      top: 100%
+      left: 50%
+      transform: translate(-50%, -50%) rotate(45deg)
+      height: 9px
+      width: 9px
+      background: #000
+      position: absolute
+
+  .home-intro
+    max-width: 640px
+    padding-top: 48px
+
+    h2
+      margin-bottom: 48px
+
+  .home-portfolio
+    max-width: 960px
+
+  .home-contact
+    text-align: center
+
+    li
+      margin-bottom: 24px
+
+    .label
+      &:after
+        content: '\2014'
+        padding-left: 4px
+        padding-right: 4px
+
+  .home-portfolio
+    h2
+      text-align: left
+      max-width: 640px
+      position: relative
+      margin: 0px auto
+      margin-bottom: 24px
+
+      a
+        position: absolute
+        right: 0px
+        bottom: 0px
+        font-size: 24px
+        color: #000
+        font-weight: bold
+
+        &:hover
+          background: $pastel-yellow
