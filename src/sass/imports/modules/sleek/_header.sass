@@ -1,1 +1,37 @@
-[data-current-theme="skeu"]
+[data-current-theme="sleek"]
+  .main-header
+    position: relative
+    padding-top: 48px
+
+  .main-header-inner
+    max-width: 1024px
+    margin: 0px auto
+
+  .my-name
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    text-align: center
+    top: 24px
+    font-size: 24px
+
+    .space
+      width: 8px
+      display: inline-block
+
+  .main-navigation
+    text-align: center
+    padding-left: 0px
+    margin-left: 0px
+    +clearfix
+
+    li
+      display: inline-block
+      width: 20%
+      float: left
+
+      &:nth-child(2)
+        margin-right: 10%
+
+      &:nth-child(3)
+        margin-left: 10%
