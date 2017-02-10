@@ -1,1 +1,85 @@
 [data-current-theme="skeu"]
+  .about-section
+    background: linear-gradient(to bottom, $grey-9, $grey-8)
+    border-top: 1px solid #fff
+    border-bottom: 1px solid $grey-7
+
+  .about-me
+    border-top: none
+
+  .about-section-inner
+    max-width: 768px
+    padding-left: 18px
+    padding-right: 18px
+    padding-top: 72px
+    padding-bottom: 72px
+    margin: 0px auto
+
+    +below($small-width)
+      padding-top: 48px
+      padding-bottom: 48px
+
+    p
+      font-size: 20px
+      line-height: 32px
+      color: $grey-3
+
+      +below($small-width)
+        font-size: 16px
+        line-height: 24px
+
+    h2, h3
+      text-align: center
+      background: linear-gradient(0deg, $grey-1 0%, $grey-6 100%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      font-weight: bold
+
+    h2
+      font-size: 48px
+
+      +below($small-width)
+        font-size: 32px
+
+  .tools-section
+    .about-section-inner
+      max-width: 1024px
+
+    p.tools-intro
+      max-width: 768px
+      margin: 0px auto
+      margin-bottom: 48px
+
+    .tools
+      display: flex
+      flex-wrap: wrap
+      border: 1px solid black(0.4)
+      border-radius: 6px
+      overflow: hidden
+
+    .tool
+      flex-grow: 1
+      width: 50%
+      border-bottom: 1px solid black(0.4)
+      border-left: 1px solid black(0.4)
+      border-top: 1px solid #fff
+      padding: 18px
+      background: linear-gradient(to bottom, $grey-9, darken($grey-8, 2.5%))
+
+      +below($small-width)
+        width: 100%
+        border-left: none !important
+
+      &:nth-child(odd)
+        border-left: none
+
+      &:last-child
+        border-bottom: none
+
+      h4
+        margin-bottom: 8px
+
+      p
+        font-size: 16px
+        line-height: 24px
+        margin-bottom: 0px

@@ -1,1 +1,151 @@
 [data-current-theme="skeu"]
+  .home-section-inner
+    max-width: 1024px
+    padding-left: 18px
+    padding-right: 18px
+    margin: 0px auto
+    padding-top: 72px
+    padding-bottom: 72px
+
+    +below($small-width)
+      padding-top: 48px
+      padding-bottom: 48px
+
+  .home-intro
+    background: linear-gradient(to bottom, $grey-9, $grey-8)
+    border-bottom: 1px solid $grey-1
+    border-top: 1px solid #fff
+
+    h2
+      font-size: 64px
+      text-align: center
+      font-weight: bold
+      line-height: 72px
+      margin-bottom: 32px
+
+      +below($small-width)
+        font-size: 32px
+        line-height: 48px
+        margin-bottom: 18px
+
+      .hi, .period
+        background: linear-gradient(0deg, $grey-1 0%, $grey-6 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+      .css
+        background: linear-gradient(to bottom, lighten($blue, 20%), darken($blue, 0%) 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+
+    p
+      font-size: 20px
+      line-height: 32px
+      color: $grey-3
+      max-width: 768px
+      margin: 0px auto
+      margin-bottom: 24px
+
+      +below($small-width)
+        font-size: 16px
+        line-height: 24px
+
+  .home-portfolio
+    background: linear-gradient(to bottom, $grey-4, $grey-1)
+    border-top: 1px solid $grey-6
+
+    h2
+      color: #fff
+      text-align: center
+      background: linear-gradient(to bottom, #fff, darken($grey-8, 2.5%))
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      text-align: center
+
+      +below($small-width)
+        line-height: 38px
+
+      a
+        font-size: 18px
+        margin-left: 24px
+        display: inline-block
+        background: linear-gradient(to bottom, lighten($blue, 20%), darken($blue, 0%))
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+        +below($small-width)
+          margin-left: 0px
+
+        &:hover
+          &:after
+            transform: translateX(3px)
+
+        &:after
+          content: '\f054'
+          font-family: icomoon
+          padding-left: 6px
+          speak: none
+          font-weight: 100
+          transition: transform .2s
+          display: inline-block
+          background: linear-gradient(to bottom, lighten($blue, 20%), darken($blue, 0%))
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+          font-size: 12px
+
+  .home-contact
+    background: linear-gradient(to bottom, lighten($blue, 20%), darken($blue, 0%))
+    border-top: 1px solid white(0.6)
+    border-bottom: 1px solid black(0.8)
+    text-align: center
+
+    *
+      color: #fff
+      text-shadow: 0px 1px 0px black(0.6)
+
+    ul
+      +clearfix
+
+    li
+      width: 25%
+      float: left
+      position: relative
+      padding-top: 48px
+
+      +below($small-width)
+        width: 50%
+
+      &:before
+        content: "\eae8"
+        font-family: 'icomoon'
+        font-size: 48px
+        speak: none
+        display: inline-block
+        margin-bottom: 24px
+
+      &:nth-child(1):before
+        content: '\ea83'
+
+      &:nth-child(2):before
+        content: '\eae8'
+
+      &:nth-child(3):before
+        content: '\eab0'
+
+      &:nth-child(4):before
+        content: '\ea96'
+
+    .value
+      line-height: 24px
+      font-size: 18px
+
+      +below($small-width)
+        font-size: 14px
+
+    .label
+      font-size: 24px
+      display: block
+
+      +below($small-width)
+        font-size: 20px

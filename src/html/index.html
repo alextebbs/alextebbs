@@ -3,6 +3,7 @@
   <head>
     @include('head.html')
   </head>
+  <!-- <body data-current-theme="flat" class=""> -->
   <body data-current-theme="default" class="first-time theme-select-is-active">
     @include('header.html')
     @include('about-this-design.html')
@@ -28,6 +29,8 @@
     <div class='change-theme'>
       <a href="javascript:;" class='trigger-theme-select'></a>
     </div>
+
+    <script src="/js/scripts.js"></script>
 
     <script>
       page.base('');
@@ -101,13 +104,14 @@
       function initMasonry() {
         var currentTheme = $('body').attr('data-current-theme');
 
-        if (currentTheme == 'flat' || currentTheme == 'whimsical') {
-          var grid = document.querySelector('.tools');
-          var msnry = new Masonry( grid, {
-            // options...
-            itemSelector: '.tool',
-            columnWidth: 200
-          });
+        if (currentTheme == 'flat') {
+          setTimeout(function() {
+            var grid = document.querySelector('.tools');
+            var msnry = new Masonry( grid, {
+              itemSelector: '.tool',
+              columnWidth: '.tool'
+            });
+          }, 50);
         };
       }
     </script>

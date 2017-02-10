@@ -1,8 +1,70 @@
+@keyframes blink
+  0%
+    opacity: 1
+
+  49%
+    opacity: 1
+
+  50%
+    opacity: 0
+
+  99%
+    opacity: 0
+
+  100%
+    opacity: 1
+
 [data-current-theme="bad"]
   padding: 48px
   background: linear-gradient(GreenYellow, Aquamarine)
   border: 20px solid DarkOliveGreen
   border-right-color: magenta
+
+  .accessory-1, .accessory-2, .accessory-3
+    position: fixed
+    z-index: 90
+    color: #fff
+    animation: blink 2s infinite linear
+    pointer-events: none
+
+    &:after
+      padding: 10px 24px
+      font-size: 24px
+
+  .accessory-1
+    top: 24px
+    right: -24px
+    transform: rotate(5deg)
+    animation-duration: 5s
+
+    &:after
+      content: "Welcome to alextebbs.com"
+      background-color: green
+
+  .accessory-2
+    top: 24px
+    left: -24px
+    transform: rotate(-5deg)
+    animation-duration: 3s
+
+    &:after
+      content: "9 Websites for the price of 1!!!"
+      background-color: red
+
+  .accessory-3
+    left: 24px
+    bottom: 24px
+    transform: rotate(3deg)
+    animation-duration: 7s
+
+    &:after
+      content: "Hire an Alex Tebbs Today!"
+      background-color: teal
+
+  .my-name
+    font-size: 24px
+
+    font-family: 'Comic Sans MS', 'Papyrus', sans-serif
 
   .about-this-design-change
     display: none
@@ -21,11 +83,17 @@
     *
       display: inline-block
 
-    .tagline-top, .tagline-bottom, h2
+    span
+      width: 6px
+
+    .my-name-top, .my-name-bottom, h2
       padding-right: 24px
       font-size: 24px
 
-    .tagline-bottom:after
+    .my-name-bottom
+      padding-left: 24px
+
+    .my-name-bottom:after
       content: ' Good Luck!'
 
   .home-intro
@@ -36,10 +104,10 @@
     h2
       color: red
       font-size: 48px
-      font-family: 'Comic Sans MS'
+      font-family: 'Comic Sans MS', sans-serif
       margin-top: 72px
 
-      span
+      .period
         display: none
 
       &:after
@@ -61,15 +129,36 @@
     color: #fff
     text-transform: uppercase
 
+    a
+      font-size: 48px
+
     a:hover
       opacity: 0
 
+  .home-portfolio
+    border-top: 1px solid #f0f
+    border-bottom: 1px solid #f0f
+    max-width: 320px
+    margin: 42px auto
+
+    img
+      max-width: 100%
+
   .home-contact
-    margin-bottom: 400px
+    background: linear-gradient(to left, red, blue)
+    padding: 12px 48px
+
+    h2
+      text-align: center
+      font-size: 40px
+      font-family: 'sans-serif'
 
     ul
       li
         +clearfix
+
+        a
+          color: #fff
 
         .label
           float: left

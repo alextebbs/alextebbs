@@ -1,1 +1,129 @@
 [data-current-theme="skeu"]
+  .portfolio.main-section
+    background: linear-gradient(to bottom, $grey-4, $grey-1)
+    padding-top: 72px
+    border-top: 1px solid white(0.2)
+    padding-bottom: 72px
+
+    +below($large-width)
+      padding: 48px 0px
+
+    .main-section-inner
+      max-width: 1024px
+      margin: 0px auto
+      padding-left: 18px
+      padding-right: 18px
+
+    .portfolio-item
+      margin-bottom: 72px
+
+      +below($large-width)
+        margin-bottom: 18px
+
+  .portfolio-intro
+    max-width: 768px
+    margin: 0px auto
+    text-align: center
+    color: #fff
+    margin-bottom: 72px
+
+    +below($large-width)
+      margin-bottom: 48px
+
+    a
+      color: lighten($blue, 10%)
+
+    h2
+      background: linear-gradient(to bottom, #fff, darken($grey-8, 2.5%))
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      font-weight: bold
+
+  .portfolio-item
+    a
+      color: $grey-3
+      border-radius: 6px
+      border: 1px solid $grey-1
+      overflow: hidden
+      box-shadow: 0px 0px 48px black(0.7)
+      display: block
+      transition: all 0.2s
+
+      &:hover
+        transform: scale(0.99)
+        box-shadow: 0px 0px 48px black(1)
+
+    img
+      max-width: 100%
+      display: block
+
+  .portfolio-image-wrap
+    position: relative
+
+    &:before, &:after
+      position: absolute
+      top: 0px
+      left: 0px
+      bottom: 0px
+      right: 0px
+      content: ''
+
+    &:before
+
+    &:after
+      background: linear-gradient(-10deg, white(0.0) 0%, white(0.0) 50%, white(0.4) 50%, white(0) 100%)
+
+  .portfolio-item-meta
+    background: linear-gradient(to bottom, $grey-9, $grey-8)
+    border-top: 1px solid $grey-4
+    padding: 24px
+    +clearfix
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    +below($small-width)
+      flex-wrap: wrap
+
+    .meta-main
+      margin-right: auto
+
+    h3
+      margin-bottom: 0px
+      font-weight: bold
+
+    h3, p
+      background: linear-gradient(0deg, $grey-1 0%, $grey-6 100%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+    p
+      margin-bottom: 0px
+      text-transform: uppercase
+      font-size: 14px
+      letter-spacing: 2px
+
+    .see-more
+      display: inline-block
+      padding: 10px 20px
+      border: 1px solid $grey-7
+      border-radius: 6px
+      color: $grey-4
+      background: linear-gradient(to bottom, $grey-9, $grey-8)
+      font-size: 20px
+      box-shadow: inset 0px 1px 0px 0px #fff
+      transition: all 0.2s
+      text-shadow: 0px 1px 0px #fff
+
+      +below($small-width)
+        display: block
+        width: 100%
+        margin-top: 18px
+        text-align: center
+
+      &:hover
+        background: linear-gradient(to bottom, $grey-8, $grey-7)
+        border: 1px solid $grey-6
+        box-shadow: inset 0px 1px 0px 0px $grey-9
+        color: $grey-3
+        text-shadow: 0px 1px 0px $grey-8

@@ -36,6 +36,12 @@ $(function() {
   );
 
   $(".my-name a").on("click", function() {
+    $("body").addClass('transitions-active');
+
+    setTimeout(function() {
+      $("body").removeClass('transitions-active');
+    }, 1000);
+
     $("body").attr("data-current-theme", $(this).attr("data-theme-key"));
     $("body").addClass('about-this-design-is-active');
   });

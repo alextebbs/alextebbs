@@ -1,1 +1,123 @@
 [data-current-theme="skeu"]
+  .accessory-1
+    background: linear-gradient(to bottom, lighten($blue, 10%), darken($blue, 0%))
+    height: 4px
+    border-bottom: 1px solid black(0.5)
+
+  .main-header
+    padding-top: 18px
+    padding-bottom: 18px
+    background: linear-gradient(to bottom, $grey-9, $grey-7)
+    border-bottom: 1px solid $grey-5
+
+    +below($medium-width)
+      padding-top: 0px
+      padding-bottom: 0px
+      text-align: center
+
+    .main-header-inner
+      margin: 0px auto
+      max-width: 1024px
+      padding-left: 18px
+      padding-right: 18px
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      +below($medium-width)
+        display: block
+
+    .my-name
+      margin-right: auto
+      padding: 18px 24px
+      background: $grey-4
+      background: linear-gradient(to bottom, $grey-4, $grey-1)
+      border-left: 1px solid #000
+      border-right: 1px solid #000
+      margin-top: -18px
+      margin-bottom: -18px
+
+      +below($medium-width)
+        width: 100%
+        margin: 0px -18px
+        width: auto
+
+      a
+        color: #fff
+        font-size: 24px
+        background: linear-gradient(to bottom, #fff, darken($grey-8, 2.5%))
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        font-weight: bold
+
+        +below($small-width)
+          font-size: 38px
+          line-height: 48px
+
+        &:hover
+          background: linear-gradient(to bottom, lighten($blue, 20%), darken($blue, 0%))
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+
+      .my-name-top, .my-name-bottom
+        color: $grey-7
+        background: linear-gradient(to bottom, $grey-8, $grey-6)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+      span
+        display: inline-block
+        width: 6px
+
+        +below($small-width)
+          width: 10px
+
+    .main-navigation
+      +below($medium-width)
+        padding-top: 18px
+        padding-bottom: 18px
+
+      li
+        display: inline-block
+        padding-left: 8px
+
+        +below($small-width)
+          padding-left: 1px
+          padding-right: 1px
+
+      a
+        display: inline-block
+        padding: 10px 20px
+        border: 1px solid $grey-7
+        border-radius: 6px
+        color: $grey-4
+        background: linear-gradient(to bottom, $grey-9, $grey-8)
+        font-size: 20px
+        box-shadow: inset 0px 1px 0px 0px #fff
+        transition: all 0.2s
+        text-shadow: 0px -1px 0px #fff
+
+        +below($small-width)
+          font-size: 14px
+          padding: 4px 8px
+
+        &.is-active
+          background: linear-gradient(to bottom, lighten($blue, 15%), darken($blue, 5%)) !important
+          color: #fff !important
+          text-shadow: 0px 2px 0px black(0.3) !important
+          border: 1px solid black(0.3) !important
+          box-shadow: inset 0px 1px 0px 0px white(0.2) !important
+
+        &:hover
+          background: linear-gradient(to bottom, $grey-8, $grey-7)
+          border: 1px solid $grey-6
+          box-shadow: inset 0px 1px 0px 0px $grey-9
+          color: $grey-3
+          text-shadow: 0px -1px 0px white(0.4)
+
+        &:active
+          background: linear-gradient(to top, darken($grey-8, 5%), $grey-7)
+          color: $grey-2
+          border: 1px solid $grey-5
+          box-shadow: 0px 1px 0px 0px $grey-9
+          text-shadow: 0px -1px 0px white(0.4)

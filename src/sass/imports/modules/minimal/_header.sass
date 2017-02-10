@@ -1,9 +1,4 @@
 body[data-current-theme="minimal"]
-  *
-    font-family: "Inconsolata", monospace
-    font-size: 16px
-    line-height: 24px
-
   .main-header
     position: fixed
     top: 48px
@@ -14,6 +9,25 @@ body[data-current-theme="minimal"]
     padding-right: 24px
     border-right: 1px solid #000
 
+    +below($medium-width)
+      position: static
+      width: auto
+      padding: 0px
+      margin-left: 18px
+      margin-right: 18px
+      padding-bottom: 24px
+      padding-top: 24px
+      border-right: none
+      border-bottom: 1px solid #000
+      +clearfix
+
+      .my-name
+        float: left
+
+    +below($smaller-width)
+      .my-name
+        float: none
+
   h1
     font-weight: bold
 
@@ -21,6 +35,18 @@ body[data-current-theme="minimal"]
       color: #000
 
   .main-navigation
+    +below($medium-width)
+      float: right
+      text-align: right
+
+    +below($smaller-width)
+      float: none
+      text-align: left
+
+      li
+        display: inline-block
+        margin-right: 12px
+
     a
       color: #000
       border-bottom: 1px solid #000

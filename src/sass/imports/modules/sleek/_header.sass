@@ -1,11 +1,53 @@
 [data-current-theme="sleek"]
+  .accessory-1
+    position: fixed
+    top: 99px
+    pointer-events: none
+    width: 319px
+    border-top: 33px solid black(0.8)
+    border-left: 12px solid transparent
+    border-right: 12px solid transparent
+    border-bottom: none
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2
+
   .main-header
-    position: relative
+    position: fixed
+    left: 0px
+    right: 0px
+    top: 0px
     padding-top: 48px
+    padding-bottom: 24px
+    background: black(0.8)
+    background: linear-gradient(to bottom, black(1), black(0.8))
+    z-index: 3
+
+    &:after
+      position: absolute
+      bottom: 0px
+      right: 50%
+      left: 0px
+      margin-right: 160px
+      height: 1px
+      background: linear-gradient(to right, $neon-pink, $neon-violet)
+      content: ''
+
+    &:before
+      position: absolute
+      bottom: 0px
+      left: 50%
+      right: 0px
+      margin-left: 160px
+      height: 1px
+      background: linear-gradient(to left, $neon-pink, $neon-violet)
+      content: ''
 
   .main-header-inner
     max-width: 1024px
     margin: 0px auto
+    padding-left: 18px
+    padding-right: 18px
 
   .my-name
     position: absolute
@@ -14,6 +56,52 @@
     text-align: center
     top: 24px
     font-size: 24px
+    border-bottom: 1px solid $neon-violet
+    width: 296px
+    padding-bottom: 12px
+
+    &:after, &:before
+      content: ''
+      width: 30px
+      height: 36px
+      position: absolute
+      bottom: 4px
+      background: transparent
+
+    &:after
+      transform: rotate(-21deg)
+      left: -7px
+      border-left: 1px solid $neon-violet
+
+    &:before
+      transform: rotate(21deg)
+      right: -7px
+      border-right: 1px solid $neon-violet
+
+    .my-name-top, .my-name-bottom
+      text-transform: uppercase
+      font-size: 14px
+      letter-spacing: 2px
+      color: $neon-violet
+      font-weight: bold
+
+    a
+      text-transform: lowercase
+      font-size: 38px
+      font-weight: bold
+      line-height: 48px
+      letter-spacing: 2px
+      color: $neon-blue
+      background: linear-gradient(to bottom, $neon-blue, $neon-violet)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      transition: all 0.2s
+
+      &:hover
+        background: none
+        -webkit-text-fill-color: currentcolor
+        color: $neon-blue
+        text-shadow: 0px 0px 24px $neon-blue
 
     .space
       width: 8px
@@ -27,11 +115,22 @@
 
     li
       display: inline-block
-      width: 20%
-      float: left
+      text-transform: lowercase
+      font-size: 24px
+      width: 120px
+      background: linear-gradient(to bottom, $neon-blue, $neon-violet)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      transition: all 0.2s
+
+      &:hover, .is-active
+        background: none
+        -webkit-text-fill-color: currentcolor
+        color: $neon-blue
+        text-shadow: 0px 0px 24px $neon-blue
 
       &:nth-child(2)
-        margin-right: 10%
+        margin-right: 180px
 
       &:nth-child(3)
-        margin-left: 10%
+        margin-left: 180px

@@ -1,1 +1,90 @@
-[data-current-theme="skeu"]
+[data-current-theme="sleek"]
+  .portfolio-item
+    img
+      max-width: 100%
+      display: block
+
+    a
+      display: block
+      position: relative
+
+      &:hover
+        .see-more
+          display: block
+
+        .portfolio-item-meta
+          border-color: $neon-pink
+
+          *
+            color: $neon-blue
+
+      &:before, &:after
+        content: ''
+        position: absolute
+        top: 0px
+        border: 12px solid transparent
+        border-top: 12px solid darken($grey-1, 16%)
+        z-index: 2
+
+      &:before
+        left: 0px
+        border-left: 12px solid darken($grey-1, 16%)
+
+      &:after
+        right: 0px
+        border-right: 12px solid darken($grey-1, 16%)
+
+  .portfolio-image-wrap
+    position: relative
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      bottom: 0px
+      border: 12px solid transparent
+      border-bottom: 12px solid darken($grey-1, 16%)
+
+    &:before
+      left: 0px
+      border-left: 12px solid darken($grey-1, 16%)
+
+    &:after
+      right: 0px
+      border-right: 12px solid darken($grey-1, 16%)
+
+  .portfolio-item-meta
+    margin-left: 24px
+    margin-right: 24px
+    background: #000
+    padding: 18px
+    +clearfix
+    border: 1px solid transparent
+    border-top: none
+
+    h3, p
+      text-transform: uppercase
+      font-size: 18px
+      letter-spacing: 2px
+      margin-bottom: 0px
+      line-height: 32px
+
+    h3
+      float: left
+
+    p
+      float: right
+
+  .see-more
+    display: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: black(0.9)
+    padding: 12px 24px
+    border: 1px solid $neon-pink
+    text-transform: uppercase
+    font-size: 24px
+    font-weight: 100
+    letter-spacing: 2px
+

@@ -2,15 +2,24 @@ body[data-current-theme="minimal"]
   .portfolio .portfolio-item
     margin-bottom: 96px
 
+    +below($medium-width)
+      margin-bottom: 38px
+
   .portfolio-item
     border-bottom: 1px solid #000
 
     img
       display: block
 
+      +below($larger-width)
+        max-width: 100%
+
     a:hover
       .portfolio-item-meta
         background: #000
+
+  .meta-main
+    line-height: 38px
 
   .portfolio-item-meta
     position: relative

@@ -1,9 +1,12 @@
 body[data-current-theme="minimal"]
-  .tool 
+  .tool
     position: relative
 
     p
       padding-left: 180px
+
+      +below($smaller-width)
+        padding-left: 18px
 
     h4
       position: absolute
@@ -13,8 +16,18 @@ body[data-current-theme="minimal"]
       text-align: right
       font-weight: bold
 
+      +below($smaller-width)
+        width: auto
+        position: static
+        text-align: left
+        margin-bottom: 0px
+        font-weight: bold
+
       span
         display: block
 
       &:after
         content: ':'
+
+        +below($smaller-width)
+          display: none

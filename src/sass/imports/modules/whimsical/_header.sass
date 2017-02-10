@@ -1,10 +1,34 @@
 [data-current-theme="whimsical"]
+  .accessory-1,
+  .accessory-2,
+  .accessory-3,
+  .accessory-4,
+  .accessory-5,
+    float: left
+    width: 20%
+    height: 4px
+
+  .accessory-1
+    background-color: $blue
+
+  .accessory-2
+    background-color: $teal
+
+  .accessory-3
+    background-color: $purple
+
+  .accessory-4
+    background-color: $red
+
+  .accessory-5
+    background-color: $orange
+
   .main-header
     max-width: 960px
     padding-left: 24px
     padding-right: 24px
     margin: 0px auto
-    margin-top: 72px
+    padding-top: 72px
 
   .main-header-inner
     margin-left: 120px
@@ -15,6 +39,9 @@
   .my-name
     float: left
     position: relative
+
+    +below($large-width)
+      float: none
 
     &:after
       content: ''
@@ -53,6 +80,9 @@
 
   .main-navigation
     float: right
+
+    +below($large-width)
+      float: none
 
     li
       font-size: 24px
