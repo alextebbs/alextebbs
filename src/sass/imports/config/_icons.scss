@@ -26,6 +26,15 @@
 .icon-mail-alt:before {
   content: "\f003";
 }
+.icon-close:before {
+  content: "\f00d";
+}
+.icon-remove:before {
+  content: "\f00d";
+}
+.icon-times:before {
+  content: "\f00d";
+}
 .icon-chevron-left:before {
   content: "\f053";
 }
@@ -37,6 +46,12 @@
 }
 .icon-chevron-down:before {
   content: "\f078";
+}
+.icon-cogs:before {
+  content: "\f085";
+}
+.icon-gears:before {
+  content: "\f085";
 }
 .icon-angle-left:before {
   content: "\f104";
@@ -74,6 +89,9 @@
 .icon-about:before {
   content: "\e971";
 }
+.icon-cog:before {
+  content: "\e994";
+}
 .icon-portfolio:before {
   content: "\e9ae";
 }
@@ -92,5 +110,3 @@
 .icon-codepen:before {
   content: "\eae8";
 }
-
-

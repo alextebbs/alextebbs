@@ -85,20 +85,30 @@
       border-bottom: none !important
       background: transparent !important
 
-  .about-this-design-close
+  .about-this-design-controls
     position: absolute
     top: -1px
     right: -1px
-    text-decoration: none !important
-    color: #fff
-    font-size: 24px !important
-    font-weight: 100 !important
-    color: #fff !important
-    height: 32px
-    width: 32px
-    text-align: center !important
-    line-height: 30px !important
-    border: 1px solid #000 !important
+    text-align: right
 
+    .icon
+      &:before
+        font-family: 'icomoon' !important
+
+    a
+      font-size: 24px !important
+      font-weight: 100 !important
+      color: #fff !important
+      height: 32px
+      width: 32px
+      margin-left: 1px
+      display: inline-block
+      text-decoration: none !important
+      text-align: center !important
+      line-height: 30px !important
+      border: none !important
+      float: right
+
+  .about-this-design-close
     &:hover
       background-color: red !important
