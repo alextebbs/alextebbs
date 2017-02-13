@@ -1,1 +1,10 @@
 [data-current-theme="flat"]
+  #content
+    transition: transform 0.15s
+
+    &.is-transitioning-out
+      transform: translateX(100%)
+
+    &.is-transitioning-in
+      transform: translateX(-100%)
+      transition-duration: 0s

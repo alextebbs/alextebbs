@@ -52,19 +52,18 @@
       letter-spacing: -25px
 
     a
-      color: red
-      color: aqua
+      color: #fafafa
       display: inline-block
 
       &:hover
-        color: #f0f
+        color: #999
 
     .space
       display: block
 
   .main-navigation
     position: fixed
-    top: 7px
+    top: 6px
     right: 20px
     z-index: 30
 
@@ -76,14 +75,19 @@
     a
       color: black
       text-transform: lowercase
+      font-family: serif
+      font-weight: 100
+      letter-spacing: 3px
 
       &.is-active
-        color: #f0f
+        color: #000
+        border-bottom: 4px solid #000
 
         &:hover
-          color: #f0f
+          color: #000
+          border-bottom: 4px solid #000
           background: transparent
 
       &:hover
-        color: red
         background: #fff
+        border-bottom: 4px solid #000

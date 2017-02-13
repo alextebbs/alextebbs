@@ -1,13 +1,12 @@
 [data-current-theme="flat"]
   .portfolio
-    border-top: 4px solid blue
     padding-top: 34px
 
     .main-section-inner
       max-width: 960px
       margin: 0px auto
-      padding-left: 24px
-      padding-right: 24px
+      padding-left: 18px
+      padding-right: 18px
       margin-bottom: 120px
 
     .portfolio-item
@@ -32,6 +31,10 @@
       line-height: 36px
       color: #000
 
+      +below($small-width)
+        font-size: 18px
+        line-height: 24px
+
     .see-more
       display: none
 
@@ -44,6 +47,11 @@
 
     .tags
       float: right
+
+    +below($smaller-width)
+      h3, .tags
+        float: none
+        margin-bottom: 0px
 
     &:hover
       .portfolio-image-wrap

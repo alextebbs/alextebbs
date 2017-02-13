@@ -1,4 +1,16 @@
 $(function() {
+
+  if (sessionStorage.getItem('theme') == null) {
+    sessionStorage.setItem('theme', 'default');
+    console.log('thing');
+  };
+
+  if (sessionStorage.getItem('theme') !== 'default') {
+    $("body").removeClass("first-time theme-select-is-active");
+  };
+
+  $('body').attr('data-current-theme', sessionStorage.getItem('theme'));
+
   $(".theme-select a").hover(
     function() {
       $(".theme-select .tagline-bottom").text($(this).attr("data-theme-desc"));
@@ -12,7 +24,9 @@ $(function() {
   );
 
   $(".theme-select a").on("click", function() {
-    $("body").attr("data-current-theme", $(this).attr("data-theme-key"));
+    var newTheme = $(this).attr("data-theme-key");
+    sessionStorage.setItem('theme', newTheme);
+    $("body").attr("data-current-theme", newTheme);
     $("body").removeClass('theme-select-is-active');
     $("body").addClass('about-this-design-is-active');
   });
@@ -36,13 +50,15 @@ $(function() {
   );
 
   $(".my-name a").on("click", function() {
-    $("body").addClass('transitions-active');
+    var newTheme = $(this).attr("data-theme-key");
+    sessionStorage.setItem('theme', newTheme);
 
+    $("body").addClass('transitions-active');
     setTimeout(function() {
       $("body").removeClass('transitions-active');
     }, 1000);
 
-    $("body").attr("data-current-theme", $(this).attr("data-theme-key"));
+    $("body").attr("data-current-theme", newTheme);
     $("body").addClass('about-this-design-is-active');
   });
 
