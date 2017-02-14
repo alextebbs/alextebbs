@@ -28,12 +28,10 @@ $(function() {
     sessionStorage.setItem('theme', newTheme);
     $("body").attr("data-current-theme", newTheme);
     $("body").removeClass('theme-select-is-active');
-    $("body").addClass('about-this-design-is-active');
   });
 
   $(".trigger-theme-select").on("click", function() {
     $("body").addClass('theme-select-is-active');
-    $("body").removeClass('about-this-design-is-active');
     $('.theme-select a').removeClass('is-active');
     $(".theme-select .tagline-top").text("UI Developer");
     $(".theme-select .tagline-bottom").text("Click on a letter of my name.");
@@ -59,10 +57,10 @@ $(function() {
     }, 1000);
 
     $("body").attr("data-current-theme", newTheme);
-    $("body").addClass('about-this-design-is-active');
   });
 
-  $(".about-this-design-close").on("click", function() {
-    $("body").removeClass('about-this-design-is-active');
+  $(".about-this-design-show").on("click", function() {
+    $("body").toggleClass('about-this-design-is-active');
+    console.log("why");
   });
 });
