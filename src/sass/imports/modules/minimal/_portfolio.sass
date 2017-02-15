@@ -18,33 +18,41 @@ body[data-current-theme="minimal"]
       .portfolio-item-meta
         background: #000
 
-  .meta-main
-    line-height: 38px
-
   .portfolio-item-meta
     position: relative
-    height: 38px
-    line-height: 38px
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    padding-top: 6px
+    padding-bottom: 6px
+
+
+    .meta-main, .see-more
+      flex-grow: 1
 
     .see-more
       border-bottom: none
-      position: absolute
-      right: 0px
-      top: 0px
-      line-height: 38px
+      margin-left: 0px
+      text-align: right
 
       &:after
         content: '\203A'
         font-weight: normal
-        font-size: 18px
+        font-size: 14px
         padding-left: 4px
+        font-weight: bold
 
     h3, p
       display: inline-block
+      margin-bottom: 0px
 
-    h3
-      &:after
-        content: '\2014'
-        padding-left: 12px
-        padding-right: 6px
-        display: inline-block
+      +below($smaller-width)
+        display: block
+
+    +above($smaller-width)
+      h3
+        &:after
+          content: '\2014'
+          padding-left: 12px
+          padding-right: 6px
+          display: inline-block

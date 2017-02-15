@@ -43,22 +43,30 @@
 
         var currentTheme = $('body').attr('data-current-theme');
 
-        if (currentTheme == 'flat' || currentTheme == 'whimsical' || currentTheme == 'skeu') {
-          if (ctx.init) {
-            next();
-          } else {
-            content.classList.add('is-transitioning-out');
-            setTimeout(function(){
-              content.classList.remove('is-transitioning-out');
-              content.classList.add('is-transitioning-in');
-              next();
-              setTimeout(function(){
-                content.classList.remove('is-transitioning-in');
-              }, 150);
-            }, 150);
-          }
-        } else {
+        var transitionTime;
+
+        switch(currentTheme) {
+          case 'swiss':
+            transitionTime = 300;
+            break;
+
+          default:
+              transitionTime = 150;
+        }
+
+        if (ctx.init) {
           next();
+        } else {
+          console.log(transitionTime);
+          document.body.classList.add('is-transitioning-out');
+          setTimeout(function(){
+            document.body.classList.remove('is-transitioning-out');
+            document.body.classList.add('is-transitioning-in');
+            next();
+            setTimeout(function(){
+              document.body.classList.remove('is-transitioning-in');
+            }, transitionTime);
+          }, transitionTime);
         }
       }
 

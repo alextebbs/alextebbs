@@ -6,3 +6,25 @@
 
     +below($large-width)
       padding-left: 48px
+
+  .accessory-1
+    position: fixed
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    width: 100%
+    height: 100%
+    background: #fff
+    z-index: 3
+    transform: translateX(-100%)
+    transition: transform 0.15s
+    transition-duration: 0s
+
+  &.is-transitioning-out .accessory-1
+    transform: translateX(0%)
+    transition-duration: 0.3s
+
+  &.is-transitioning-in .accessory-1
+    transform: translateX(100%)
+    transition-duration: 0.3s

@@ -1,12 +1,17 @@
 [data-current-theme="brutalist"]
   #content
     margin-left: 112px
+    opacity: 1
+    transition: opacity 0.15s
 
     +below($medium-width)
       margin-left: 48px
 
     +below($smaller-width)
       margin-left: 32px
+
+  &.is-transitioning-out #content
+    opacity: 0
 
   .main-section
     max-width: 960px

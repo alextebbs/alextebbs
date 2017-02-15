@@ -1,3 +1,13 @@
 [data-current-theme="skeu"]
   .main-section
     border-top: 1px solid #fff
+
+  #content
+    transition: transform 0.15s
+
+  &.is-transitioning-out #content
+      transform: translateX(100%)
+
+  &.is-transitioning-in #content
+    transform: translateX(-100%)
+    transition-duration: 0s

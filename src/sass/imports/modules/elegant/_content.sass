@@ -1,4 +1,11 @@
 [data-current-theme="elegant"]
+  #content
+    opacity: 1
+    transition: opacity 0.15s
+
+  &.is-transitioning-out #content
+    opacity: 0
+
   .main-section
     margin: 0px auto
     padding-left: 18px
