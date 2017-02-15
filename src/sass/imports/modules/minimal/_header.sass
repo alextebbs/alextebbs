@@ -51,7 +51,11 @@ body[data-current-theme="minimal"]
       color: #000
       border-bottom: 1px solid #000
 
-      &:hover, &.is-active
+      &.is-active
+        background-color: #000
+        color: #fff
+
+      +hover
         background-color: #000
         color: #fff
 
@@ -69,6 +73,6 @@ body[data-current-theme="minimal"]
       border-bottom: none
       font-weight: bold
 
-      &:hover
+      +hover
         background: #000
         color: #fff

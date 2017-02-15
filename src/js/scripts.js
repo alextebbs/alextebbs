@@ -53,15 +53,15 @@ $(function() {
     $(".theme-select .tagline-bottom").text(actionString);
   });
 
-  $(".my-name a").hover(
-    function() {
-      $(".my-name .my-name-bottom").text($(this).attr("data-theme-desc"));
-      $(".my-name .my-name-top").text($(this).attr("data-alex-desc"));
-    }, function() {
-      $(".my-name .my-name-top").text("UI Developer");
-      $(".my-name .my-name-bottom").text(actionString);
-    }
-  );
+  $(".my-name a").on('mouseenter', function() {
+    $(".my-name .my-name-bottom").text($(this).attr("data-theme-desc"));
+    $(".my-name .my-name-top").text($(this).attr("data-alex-desc"));
+  });
+
+  $(".my-name a").on('mouseleave', function() {
+    $(".my-name .my-name-top").text("UI Developer");
+    $(".my-name .my-name-bottom").text(actionString);
+  });
 
   $(".my-name a").on("click touchstart", function() {
     var newTheme = $(this).attr("data-theme-key");
