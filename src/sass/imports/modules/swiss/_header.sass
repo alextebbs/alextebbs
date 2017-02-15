@@ -9,10 +9,27 @@
     width: 272px
     z-index: 2
 
+    +below($large-width)
+      border-top: none
+      position: static
+      width: 592px
+      margin-left: 48px
+      padding-top: 0px
+      +clearfix
+
   .my-name
     padding-bottom: 48px
     border-bottom: 4px solid #000
     margin-bottom: 48px
+
+    +below($large-width)
+      border-top: 4px solid #000
+      width: 272px
+      float: left
+      margin-right: 48px
+      border-bottom: none
+      padding-top: 32px
+      padding-bottom: 0px
 
   .my-name-top
     margin-bottom: 18px
@@ -41,11 +58,22 @@
       display: block
 
   .main-navigation
+    +below($large-width)
+      width: 272px
+      float: left
+      border-top: 4px solid #000
+      padding-top: 32px
+      text-align: right
+
     li
       font-weight: bold
       text-transform: lowercase
       font-size: 18px
       line-height: 32px
+
+      +below($large-width)
+        font-size: 24px
+        line-height: 36px
 
     a
       color: #000

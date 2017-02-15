@@ -2,6 +2,12 @@
   #content
     margin-left: 112px
 
+    +below($medium-width)
+      margin-left: 48px
+
+    +below($smaller-width)
+      margin-left: 32px
+
   .main-section
     max-width: 960px
     margin: 0px auto
@@ -10,3 +16,10 @@
     margin-top: 280px
     padding-left: 24px
     padding-right: 24px
+
+    +below($small-width)
+      margin-top: 120px
+
+    +below($smaller-width)
+      padding-right: 0px
+      padding-left: 0xp

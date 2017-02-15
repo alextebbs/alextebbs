@@ -30,17 +30,24 @@
     margin: 0px auto
     padding-top: 72px
 
+    +below($small-width)
+      padding-top: 96px
+      text-align: center
+
   .main-header-inner
     margin-left: 120px
     border-bottom: 4px solid $grey-8
     +clearfix
     padding-bottom: 24px
 
+    +below($small-width)
+      margin-left: 0px
+
   .my-name
     float: left
     position: relative
 
-    +below($large-width)
+    +below($medium-width)
       float: none
 
     &:after
@@ -53,6 +60,17 @@
       border-radius: 50%
       top: 0px
       background: $grey-8
+
+      +below($small-width)
+        height: 64px
+        width: 64px
+        right: auto
+        left: 50%
+        top: auto
+        bottom: 100%
+        margin-bottom: 12px
+        transform: translateX(-50%)
+        margin-right: 12px
 
   .my-name-top, .my-name-bottom
     font-size: 12px
@@ -81,7 +99,7 @@
   .main-navigation
     float: right
 
-    +below($large-width)
+    +below($medium-width)
       float: none
 
     li
@@ -91,12 +109,31 @@
       font-weight: bold
       padding-top: 40px
 
+      +between($small-width, $medium-width)
+        margin-left: 0px
+        margin-right: 18px
+        font-size: 20px
+        padding-top: 18px
+
+      +below($small-width)
+        margin-top: 32px
+        margin-left: 8px
+        margin-right: 8px
+
+      +below($smaller-width)
+        margin-left: 4px
+        margin-right: 4px
+        font-size: 18px
+        padding-top: 30px
+        margin-top: 12px
+        line-height: 18px
+
       a
         display: inline-block
         padding-bottom: 4px
         position: relative
 
-        &:after
+        &:before
           font-family: 'icomoon'
           position: absolute
           top: -40px
@@ -106,6 +143,17 @@
           font-weight: normal
           transition: transform 0.2s
           speak: none
+
+          +between($small-width, $medium-width)
+            display: inline-block
+            position: static
+            transform: none
+            padding-right: 8px
+            font-size: 26px
+
+          +below($smaller-width)
+            font-size: 20px
+            top: -24px
 
         &.is-active
           border-bottom: 3px solid
@@ -122,7 +170,7 @@
         a
           color: $teal
 
-          &:after
+          &:before
             color: $teal
             content: '\e902'
 
@@ -130,7 +178,7 @@
         a
           color: $blue
 
-          &:after
+          &:before
             color: $blue
             content: '\e971'
 
@@ -138,7 +186,7 @@
         a
           color: $red
 
-          &:after
+          &:before
             color: $red
             content: '\e9ae'
 
@@ -146,6 +194,6 @@
         a
           color: $orange
 
-          &:after
+          &:before
             color: $orange
             content: '\e923'

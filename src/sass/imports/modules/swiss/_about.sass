@@ -1,23 +1,31 @@
 [data-current-theme="swiss"]
   .about-top
-    +clearfix
+    float: left
+
+    +below(1340px)
+      float: none
+      +clearfix
 
     .about-section
       width: 272px
       margin-right: 48px
-      float: left
       padding-top: 72px
+      padding-bottom: 48px
       border-top: 4px solid #000
 
-      h2, h3
-        font-size: 24px
-        line-height: 24px
+      +below(1340px)
+        float: left
+
+  .about-section
+    h2, h3
+      font-size: 24px
+      line-height: 24px
 
   .tools-section
-    width: 912px
+    width: 592px
+    float: left
     border-top: 4px solid #000
-    margin-top: 64px
-    padding-top: 64px
+    padding-top: 72px
 
   .tools-intro
     font-size: 18px
@@ -26,15 +34,17 @@
   .tools
     margin-left: -24px
     margin-right: -24px
+    display: flex
+    flex-wrap: wrap
 
   .tool
-    float: left
+    flex-grow: 1
     width: 272px
     margin-left: 24px
+    margin-bottom: 32px
     margin-right: 24px
     padding-top: 24px
     border-top: 4px solid #000
-    height: 340px
 
     h4
       margin-bottom: 12px

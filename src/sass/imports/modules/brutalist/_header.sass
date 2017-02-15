@@ -11,6 +11,16 @@
     z-index: 2
     pointer-events: none
 
+    +below($medium-width)
+      font-size: 42px
+      left: 24px
+      bottom: -3px
+
+    +below($smaller-width)
+      font-size: 32px
+      left: 24px
+      bottom: 32px
+
   .my-name-bottom
     position: fixed
     left: 100px
@@ -22,6 +32,16 @@
     font-size: 48px
     z-index: 2
     pointer-events: none
+
+    +below($medium-width)
+      font-size: 32px
+      left: 60px
+      bottom: -1px
+
+    +below($smaller-width)
+      font-size: 18px
+      left: 50px
+      bottom: 32px
 
   // .my-name-bottom
     position: fixed
@@ -45,14 +65,24 @@
     font-weight: bold
     letter-spacing: -10px
 
+    +below($small-width)
+      font-size: 123px
+      line-height: 95px
+
     a:nth-child(1)
       margin-left: 200px
+
+      +below($small-width)
+        margin-left: 96px
 
     a:nth-child(6)
       letter-spacing: -25px
 
+      +below($small-width)
+        margin-left: 0px
+
     a
-      color: #fafafa
+      color: #eeeeee
       display: inline-block
 
       &:hover
@@ -64,13 +94,24 @@
   .main-navigation
     position: fixed
     top: 6px
-    right: 20px
+    right: 0px
     z-index: 30
+
+    +below($small-width)
+      left: 0px
+      text-align: right
 
     li
       display: inline-block
       padding-left: 24px
       font-size: 48px
+
+      +below($medium-width)
+        font-size: 32px
+
+      +below($small-width)
+        font-size: 22px
+        padding-left: 8px
 
     a
       color: black
@@ -78,6 +119,9 @@
       font-family: serif
       font-weight: 100
       letter-spacing: 3px
+
+      +below($small-width)
+        letter-spacing: 1px
 
       &.is-active
         color: #000

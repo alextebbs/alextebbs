@@ -11,7 +11,13 @@
   transition: all 0.2s
   z-index: 999
 
-  +below($medium-width)
+  .first-time &
+    bottom: 0px
+
+  +below($small-width)
+    width: 320px
+
+  +below($smaller-width)
     width: auto
     right: 0px
     left: 0px

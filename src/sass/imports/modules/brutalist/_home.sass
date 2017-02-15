@@ -2,9 +2,27 @@
   .home-section
     margin-bottom: 160px
 
+    +below($medium-width)
+      margin-bottom: 96px
+
+    +below($small-width)
+      margin-bottom: 72px
+
+    +below($smaller-width)
+      margin-bottom: 48px
+
   .home-intro
     margin-right: 120px
     margin-top: 300px
+
+    +below($medium-width)
+      margin-right: 0px
+
+    +below($small-width)
+      margin-top: 220px
+
+    +below($smaller-width)
+      margin-top: 200px
 
     .home-section-inner
       position: relative
@@ -15,9 +33,26 @@
       bottom: 100%
       left: -4px
       font-size: 84px
+      line-height: 96px
+      margin-bottom: 0px
+
+      +below($large-width)
+        font-size: 64px
+        line-height: 72px
+
+      +below($small-width)
+        font-size: 54px
+        line-height: 64px
+
+      +below($smaller-width)
+        font-size: 30px
+        line-height: 34px
 
   .home-portfolio
     margin-left: 120px
+
+    +below($medium-width)
+      margin-left: 0px
 
     .portfolio-item
       position: relative
@@ -33,14 +68,36 @@
     .label
       padding-right: 12px
 
+    li
+      +below($smaller-width)
+        padding-right: 0px !important
+
     li:nth-child(1)
       padding-right: 0px
 
     li:nth-child(2)
       padding-right: 140px
 
+      +below($medium-width)
+        padding-right: 120px
+
+      +below($small-width)
+        padding-right: 60px
+
     li:nth-child(3)
       padding-right: 280px
 
+      +below($medium-width)
+        padding-right: 240px
+
+      +below($small-width)
+        padding-right: 120px
+
     li:nth-child(4)
       padding-right: 420px
+
+      +below($medium-width)
+        padding-right: 360px
+
+      +below($small-width)
+        padding-right: 180px

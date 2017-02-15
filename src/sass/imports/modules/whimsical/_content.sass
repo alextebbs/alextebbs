@@ -2,8 +2,22 @@
   .main-section
     max-width: 960px
     margin: 0px auto
-    padding-left: 24px
-    padding-right: 24px
+    padding-left: 18px
+    padding-right: 18px
 
   .main-section-inner
     margin-left: 120px
+
+    +below($small-width)
+      margin-left: 0px
+
+  #content
+    transition: transform 0.15s
+    transition-timing-function: ease-in-out
+
+    &.is-transitioning-out
+      transform: translateX(100%)
+
+    &.is-transitioning-in
+      transform: translateX(-100%)
+      transition-duration: 0s
