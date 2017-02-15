@@ -72,7 +72,6 @@
 
       function showAbout(ctx) {
         render(template('about'), !ctx.init);
-        initMasonry();
       }
 
       function showPortfolio(ctx) {
@@ -113,20 +112,6 @@
         return document
           .getElementById(name + '-template')
           .innerHTML;
-      }
-
-      function initMasonry() {
-        var currentTheme = $('body').attr('data-current-theme');
-
-        if (currentTheme == 'flat') {
-          setTimeout(function() {
-            var grid = document.querySelector('.tools');
-            var msnry = new Masonry( grid, {
-              itemSelector: '.tool',
-              columnWidth: '.tool'
-            });
-          }, 50);
-        };
       }
     </script>
   </body>
