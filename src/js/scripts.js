@@ -1,5 +1,13 @@
 $(function() {
 
+  if (Modernizr.touchevents) {
+    actionString = 'Tap on a letter of my name.'
+  } else {
+    actionString = 'Click on a letter of my name.'
+  }
+
+  $(".my-name .my-name-bottom").text(actionString);
+
   if (sessionStorage.getItem('theme') == null) {
     sessionStorage.setItem('theme', 'default');
   };
@@ -17,35 +25,32 @@ $(function() {
       sessionStorage.setItem('theme', newTheme);
   };
 
-  $(".theme-select a").hover(
-    function() {
-      newTheme = $(this).attr('data-theme-key');
-      $(".theme-select .tagline-bottom").text($(this).attr("data-theme-desc"));
-      $(".theme-select .tagline-top").text($(this).attr("data-alex-desc"));
-      $("body").removeClass("first-time");
-      changeTheme(newTheme);
-    }, function() {
-    }
-  );
+  $(".theme-select a").on("mouseenter", function() {
+    newTheme = $(this).attr('data-theme-key');
+    $(".theme-select .tagline-bottom").text($(this).attr("data-theme-desc"));
+    $(".theme-select .tagline-top").text($(this).attr("data-alex-desc"));
+    $("body").removeClass("first-time");
+    changeTheme(newTheme);
+  });
 
-  $(".theme-select").hover(
-    function() {
-    }, function() {
+  $(".theme-select").on('mouseleave', function() {
+    if ($('body').hasClass('first-time')) {
+    } else {
       $("body").removeClass('theme-select-is-active');
     }
-  );
+  });
 
-  $(".theme-select a").on("click", function() {
+  $(".theme-select a").on("click touchstart", function() {
     var newTheme = $(this).attr("data-theme-key");
     changeTheme(newTheme);
     $("body").removeClass('theme-select-is-active');
   });
 
-  $(".trigger-theme-select").on("click", function() {
+  $(".trigger-theme-select").on("click touchstart", function() {
     $("body").addClass('theme-select-is-active');
     $('.theme-select a').removeClass('is-active');
     $(".theme-select .tagline-top").text("UI Developer");
-    $(".theme-select .tagline-bottom").text("Click on a letter of my name.");
+    $(".theme-select .tagline-bottom").text(actionString);
   });
 
   $(".my-name a").hover(
@@ -54,11 +59,11 @@ $(function() {
       $(".my-name .my-name-top").text($(this).attr("data-alex-desc"));
     }, function() {
       $(".my-name .my-name-top").text("UI Developer");
-      $(".my-name .my-name-bottom").text("Click on a letter of my name.");
+      $(".my-name .my-name-bottom").text(actionString);
     }
   );
 
-  $(".my-name a").on("click", function() {
+  $(".my-name a").on("click touchstart", function() {
     var newTheme = $(this).attr("data-theme-key");
 
     $("body").addClass('transitions-active');
@@ -70,7 +75,7 @@ $(function() {
     changeTheme(newTheme);
   });
 
-  $(".about-this-design-show").on("click", function() {
+  $(".about-this-design-show").on("click touchstart", function() {
     $("body").toggleClass('about-this-design-is-active');
   });
 });
