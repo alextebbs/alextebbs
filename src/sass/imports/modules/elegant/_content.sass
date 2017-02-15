@@ -1,6 +1,8 @@
 [data-current-theme="elegant"]
   .main-section
     margin: 0px auto
+    padding-left: 18px
+    padding-right: 18px
 
     #{$all-header-elements}
       text-align: center
@@ -9,6 +11,10 @@
       font-size: 24px
       line-height: 38px
       font-weight: 100
+
+      +below($small-width)
+        font-size: 20px
+        line-height: 34px
 
     p
       text-align: justify

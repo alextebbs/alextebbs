@@ -6,11 +6,18 @@
     margin-bottom: 96px
     border-bottom: 1px solid #000
 
+    +below($small-width)
+      padding-bottom: 32px
+      margin-bottom: 64px
+
   .tools-section
     border-bottom: none
 
   .tool
     margin-bottom: 72px
+
+    +below($small-width)
+      margin-bottom: 48px
 
     h4
       text-transform: uppercase

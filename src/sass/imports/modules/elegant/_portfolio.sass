@@ -2,7 +2,12 @@
 [data-current-theme="elegant"]
   .portfolio
     .portfolio-item
+      max-width: 1024px
+      margin: 0px auto
       margin-bottom: 96px
+
+      +below($small-width)
+        margin-bottom: 64px
 
     .portfolio-intro
       max-width: 640px
@@ -13,6 +18,7 @@
     img
       display: block
       margin: 0px auto
+      width: 100%
 
     a:hover
       .portfolio-item-meta
@@ -29,17 +35,30 @@
     padding-top: 12px
     position: relative
 
+    +below($small-width)
+      padding-bottom: 12px
+
     h3, p, .see-more
       margin-bottom: 0px
       display: inline-block
       font-size: 20px
       color: #000
 
-    h3
-      &:after
-        content: '\2014'
-        padding-left: 4px
-        padding-right: 4px
+    +below($small-width)
+      h3, p
+        display: block
+        text-align: left
+        margin-bottom: 0px
+
+      h3, p, .see-more
+        line-height: 24px
+
+    +above($small-width)
+      h3
+        &:after
+          content: '\2014'
+          padding-left: 4px
+          padding-right: 4px
 
     .see-more
       position: absolute

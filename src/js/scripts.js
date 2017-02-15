@@ -13,13 +13,23 @@ $(function() {
 
   $(".theme-select a").hover(
     function() {
+      newTheme = $(this).attr('data-theme-key');
+
       $(".theme-select .tagline-bottom").text($(this).attr("data-theme-desc"));
       $(".theme-select .tagline-top").text($(this).attr("data-alex-desc"));
-      $("body").attr("data-current-theme", $(this).attr("data-theme-key"));
+      $("body").attr("data-current-theme", newTheme);
       $("body").removeClass("first-time");
       $('.theme-select a').removeClass('is-active');
+      $('link[rel="icon"]').attr('href', "img/favicon-"+newTheme+".png");
       $(this).addClass('is-active');
     }, function() {
+    }
+  );
+
+  $(".theme-select").hover(
+    function() {
+    }, function() {
+      $("body").removeClass('theme-select-is-active');
     }
   );
 
