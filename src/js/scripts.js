@@ -2,7 +2,6 @@ $(function() {
 
   if (sessionStorage.getItem('theme') == null) {
     sessionStorage.setItem('theme', 'default');
-    console.log('thing');
   };
 
   if (sessionStorage.getItem('theme') !== 'default') {
@@ -10,18 +9,21 @@ $(function() {
   };
 
   $('body').attr('data-current-theme', sessionStorage.getItem('theme'));
+  $('link[rel="icon"]').attr('href', "img/favicon-"+sessionStorage.getItem('theme')+".png");
+
+  var changeTheme = function(newTheme) {
+      $("body").attr("data-current-theme", newTheme);
+      $('link[rel="icon"]').attr('href', "img/favicon-"+newTheme+".png");
+      sessionStorage.setItem('theme', newTheme);
+  };
 
   $(".theme-select a").hover(
     function() {
       newTheme = $(this).attr('data-theme-key');
-
       $(".theme-select .tagline-bottom").text($(this).attr("data-theme-desc"));
       $(".theme-select .tagline-top").text($(this).attr("data-alex-desc"));
-      $("body").attr("data-current-theme", newTheme);
       $("body").removeClass("first-time");
-      $('.theme-select a').removeClass('is-active');
-      $('link[rel="icon"]').attr('href', "img/favicon-"+newTheme+".png");
-      $(this).addClass('is-active');
+      changeTheme(newTheme);
     }, function() {
     }
   );
@@ -35,8 +37,7 @@ $(function() {
 
   $(".theme-select a").on("click", function() {
     var newTheme = $(this).attr("data-theme-key");
-    sessionStorage.setItem('theme', newTheme);
-    $("body").attr("data-current-theme", newTheme);
+    changeTheme(newTheme);
     $("body").removeClass('theme-select-is-active');
   });
 
@@ -59,18 +60,17 @@ $(function() {
 
   $(".my-name a").on("click", function() {
     var newTheme = $(this).attr("data-theme-key");
-    sessionStorage.setItem('theme', newTheme);
 
     $("body").addClass('transitions-active');
+
     setTimeout(function() {
       $("body").removeClass('transitions-active');
     }, 1000);
 
-    $("body").attr("data-current-theme", newTheme);
+    changeTheme(newTheme);
   });
 
   $(".about-this-design-show").on("click", function() {
     $("body").toggleClass('about-this-design-is-active');
-    console.log("why");
   });
 });
