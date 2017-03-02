@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener("DOMContentLoaded", function(event) {
 
   if (Modernizr.touchevents) {
     actionString = 'Tap on a letter of my name.'
@@ -6,85 +6,101 @@ $(function() {
     actionString = 'Click on a letter of my name.'
   }
 
-  document.querySelector(".my-name-bottom").textContent = actionString;
+  var body = document.body;
+
+  var Q = document.querySelector.bind(document);
+  var QA = document.querySelectorAll.bind(document);
+
+  Q(".my-name-bottom").textContent = actionString;
 
   if (sessionStorage.getItem('theme') == null) {
     sessionStorage.setItem('theme', 'default');
   };
 
   if (sessionStorage.getItem('theme') !== 'default') {
-    document.body.classList.remove('first-time');
-    document.body.classList.remove('theme-select-is-active');
+    body.classList.remove('first-time');
+    body.classList.remove('theme-select-is-active');
   };
 
-  document.body.dataset.currentTheme = sessionStorage.getItem('theme');
+  body.dataset.currentTheme = sessionStorage.getItem('theme');
 
-  document.querySelector('link[rel="icon"]')
+  Q('link[rel="icon"]')
     .setAttribute('href', "img/favicon-"+sessionStorage.getItem('theme')+".png");
 
   var changeTheme = function(newTheme) {
-      document.body.dataset.currentTheme = newTheme;
-      document.querySelector('link[rel="icon"]')
+      body.dataset.currentTheme = newTheme;
+      Q('link[rel="icon"]')
         .setAttribute('href', "img/favicon-"+newTheme+".png");
       sessionStorage.setItem('theme', newTheme);
   };
 
-  $(".theme-select a").on("mouseenter", function() {
-    newTheme = $(this).attr('data-theme-key');
-    $(".theme-select .tagline-bottom").text($(this).attr("data-theme-desc"));
-    $(".theme-select .tagline-top").text($(this).attr("data-alex-desc"));
-    $("body").removeClass("first-time");
-    changeTheme(newTheme);
+  var themeLinks = QA('.theme-select a');
+  for (var i = 0; i < themeLinks.length; i++) {
+    themeLinks[i].addEventListener('mouseenter', function() {
+      newTheme = this.dataset.themeKey;
+      themeDesc = this.dataset.themeDesc;
+      alexDesc = this.dataset.alexDesc;
+
+      Q('.theme-select .tagline-bottom').textContent = this.dataset.themeDesc;
+      Q('.theme-select .tagline-top').textContent = this.dataset.alexDesc;
+
+      body.classList.remove('first-time');
+      changeTheme(newTheme);
+    });
+
+    themeLinks[i].addEventListener('click', function() {
+      var newTheme = this.dataset.themeKey;
+      changeTheme(newTheme);
+      body.classList.remove('theme-select-is-active');
+    });
+  };
+
+  Q('.theme-select').addEventListener('mouseleave', function() {
+    if (!body.classList.contains('first-time')) {
+      body.classList.remove('theme-select-is-active');
+    };
   });
 
-  $(".theme-select").on('mouseleave', function() {
-    if ($('body').hasClass('first-time')) {
-    } else {
-      $("body").removeClass('theme-select-is-active');
-    }
+  body.addEventListener('click', function(e) {
+    if (e.target.classList.contains('trigger-theme-select')) {
+      body.classList.add('theme-select-is-active');
+      Q('.theme-select .tagline-top').textContent('UI Developer');
+      Q('.theme-select .tagline-bottom').textContent(actionString);
+    };
   });
 
-  $(".theme-select a").on("click", function() {
-    var newTheme = $(this).attr("data-theme-key");
-    changeTheme(newTheme);
-    $("body").removeClass('theme-select-is-active');
+  var nameLinks = QA('.my-name a');
+  for (var i = 0; i < nameLinks.length; i++) {
+    nameLinks[i].addEventListener('mouseenter', function() {
+      Q('.my-name .my-name-top').textContent = this.dataset.themeDesc;
+      Q('.my-name .my-name-bottom').textContent = this.dataset.alexDesc;
+    });
+
+    nameLinks[i].addEventListener('mouseleave', function() {
+      Q('.my-name .my-name-top').textContent = "UI Developer"
+      Q('.my-name .my-name-bottom').textContent = actionString;
+    });
+
+    nameLinks[i].addEventListener('click', function() {
+      var newTheme = this.dataset.themeKey;
+
+      body.classList.add("transitions-active");
+
+      setTimeout(function() {
+        body.classList.remove("transitions-active");
+      }, 1000);
+
+      changeTheme(newTheme);
+    });
+  };
+
+  Q('.about-this-design-show').addEventListener('click', function() {
+    body.classList.toggle('about-this-design-is-active');
   });
 
-  $("body").on("click", ".trigger-theme-select", function() {
-    $("body").addClass('theme-select-is-active');
-    $('.theme-select a').removeClass('is-active');
-    $(".theme-select .tagline-top").text("UI Developer");
-    $(".theme-select .tagline-bottom").text(actionString);
-  });
-
-  $(".my-name a").on('mouseenter', function() {
-    $(".my-name .my-name-bottom").text($(this).attr("data-theme-desc"));
-    $(".my-name .my-name-top").text($(this).attr("data-alex-desc"));
-  });
-
-  $(".my-name a").on('mouseleave', function() {
-    $(".my-name .my-name-top").text("UI Developer");
-    $(".my-name .my-name-bottom").text(actionString);
-  });
-
-  $(".my-name a").on("click", function() {
-    var newTheme = $(this).attr("data-theme-key");
-
-    $("body").addClass('transitions-active');
-
-    setTimeout(function() {
-      $("body").removeClass('transitions-active');
-    }, 1000);
-
-    changeTheme(newTheme);
-  });
-
-  $(".about-this-design-show").on("click", function() {
-    $("body").toggleClass('about-this-design-is-active');
-  });
-
-  $('.content-wrap').on('click', function() {
-    $("body").removeClass("first-time theme-select-is-active");
+  Q('.content-wrap').addEventListener('click', function() {
+    body.classList.remove('first-time');
+    body.classList.remove('theme-select-is-active');
   });
 
   console.log(
