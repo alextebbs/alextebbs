@@ -17,6 +17,9 @@
       padding-top: 0px
       +clearfix
 
+    +below($small-width)
+      width: 272px
+
   .my-name
     padding-bottom: 48px
     border-bottom: 4px solid #000
@@ -30,6 +33,10 @@
       border-bottom: none
       padding-top: 32px
       padding-bottom: 0px
+
+    +below($small-width)
+      float: none
+      margin-bottom: 24px
 
   .my-name-top
     margin-bottom: 18px
@@ -45,6 +52,10 @@
     font-weight: bold
     margin-bottom: 24px
 
+    +below($small-width)
+      font-size: 61px
+      line-height: 40px
+
     a:nth-child(6)
       letter-spacing: -12px
 
@@ -55,7 +66,12 @@
         color: white
 
     .space
-      display: block
+      +below($small-width)
+        width: 12px
+        display: inline-block
+
+      +above($small-width)
+        display: block
 
   .main-navigation
     +below($large-width)
@@ -83,3 +99,18 @@
 
       +hover
         text-decoration: line-through
+
+    +below($small-width)
+      text-align: left
+      padding-top: 0px
+      padding-top: 12px
+      padding-bottom: 12px
+
+      ul
+        display: flex
+        justify-content: space-between
+
+      li
+        display: inline-block
+        flex-grow: 1
+        font-size: 18px

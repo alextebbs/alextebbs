@@ -74,11 +74,17 @@
       +clearfix
 
     li
-      width: 25%
-      float: left
-      text-align: right
+      text-align: center
       position: relative
       padding-top: 48px
+
+      +above($small-width)
+        width: 50%
+        float: left
+        text-align: right
+
+      +above($medium-width)
+        width: 25%
 
       &:before
         content: "\eae8"

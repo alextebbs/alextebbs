@@ -3,17 +3,19 @@
     .portfolio-item
       margin-bottom: 72px
 
-      &:nth-of-type(1)
-        transform: translateX(-96px)
+      +above($larger-width)
+        &:nth-of-type(1)
+          transform: translateX(-96px)
 
-      &:nth-of-type(3)
-        transform: translateX(96px)
+        &:nth-of-type(3)
+          transform: translateX(96px)
 
   .portfolio-item
     position: relative
 
     img
       display: block
+      max-width: 100%
 
     h3, .tags
       color: #000
@@ -22,6 +24,16 @@
       position: absolute
       background: #fff
       transition: all 0.2s
+
+      +below($large-width)
+        font-size: 16px
+        letter-spacing: 3px
+        line-height: 18px
+
+      +below($small-width)
+        font-size: 12px
+        letter-spacing: 2px
+        line-height: 14px
 
     +hover
       .see-more

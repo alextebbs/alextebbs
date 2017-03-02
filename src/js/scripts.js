@@ -40,13 +40,13 @@ $(function() {
     }
   });
 
-  $(".theme-select a").on("click ", function() {
+  $(".theme-select a").on("click", function() {
     var newTheme = $(this).attr("data-theme-key");
     changeTheme(newTheme);
     $("body").removeClass('theme-select-is-active');
   });
 
-  $(".trigger-theme-select").on("click ", function() {
+  $("body").on("click", ".trigger-theme-select", function() {
     $("body").addClass('theme-select-is-active');
     $('.theme-select a').removeClass('is-active');
     $(".theme-select .tagline-top").text("UI Developer");
@@ -63,7 +63,7 @@ $(function() {
     $(".my-name .my-name-bottom").text(actionString);
   });
 
-  $(".my-name a").on("click ", function() {
+  $(".my-name a").on("click", function() {
     var newTheme = $(this).attr("data-theme-key");
 
     $("body").addClass('transitions-active');
@@ -75,7 +75,7 @@ $(function() {
     changeTheme(newTheme);
   });
 
-  $(".about-this-design-show").on("click ", function() {
+  $(".about-this-design-show").on("click", function() {
     $("body").toggleClass('about-this-design-is-active');
   });
 });
