@@ -6,22 +6,26 @@ $(function() {
     actionString = 'Click on a letter of my name.'
   }
 
-  $(".my-name .my-name-bottom").text(actionString);
+  document.querySelector(".my-name-bottom").textContent = actionString;
 
   if (sessionStorage.getItem('theme') == null) {
     sessionStorage.setItem('theme', 'default');
   };
 
   if (sessionStorage.getItem('theme') !== 'default') {
-    $("body").removeClass("first-time theme-select-is-active");
+    document.body.classList.remove('first-time');
+    document.body.classList.remove('theme-select-is-active');
   };
 
-  $('body').attr('data-current-theme', sessionStorage.getItem('theme'));
-  $('link[rel="icon"]').attr('href', "img/favicon-"+sessionStorage.getItem('theme')+".png");
+  document.body.dataset.currentTheme = sessionStorage.getItem('theme');
+
+  document.querySelector('link[rel="icon"]')
+    .setAttribute('href', "img/favicon-"+sessionStorage.getItem('theme')+".png");
 
   var changeTheme = function(newTheme) {
-      $("body").attr("data-current-theme", newTheme);
-      $('link[rel="icon"]').attr('href', "img/favicon-"+newTheme+".png");
+      document.body.dataset.currentTheme = newTheme;
+      document.querySelector('link[rel="icon"]')
+        .setAttribute('href', "img/favicon-"+newTheme+".png");
       sessionStorage.setItem('theme', newTheme);
   };
 
@@ -78,4 +82,20 @@ $(function() {
   $(".about-this-design-show").on("click", function() {
     $("body").toggleClass('about-this-design-is-active');
   });
+
+  $('.content-wrap').on('click', function() {
+    $("body").removeClass("first-time theme-select-is-active");
+  });
+
+  console.log(
+    'Hi Developer, \n\n'+
+    'This site is built using purely HTML/CSS/JS. A data attribute on the body \n'+
+    'element controls what theme is selected. Other than that attribute, when \n'+
+    'switching themes the DOM remains entirely unaffected. All styles for each \n'+
+    'theme are scoped under this attribute. Your chosen theme is persisted to \n'+
+    'sessionStorage so you can refresh the page. I’m using page.js \n'+
+    '(https://visionmedia.github.io/page.js/) to manage history and routing, so \n'+
+    'this is a single index.html file. No images are used for any of the visual \n'+
+    'effects, everything is done with CSS.'
+  )
 });

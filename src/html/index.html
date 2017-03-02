@@ -4,26 +4,37 @@
     @include('head.html')
   </head>
   <body data-current-theme="default" class="first-time theme-select-is-active">
-    @include('header.html')
+    <div class="theme-select">
+      <div class="tagline-top">UI Developer</div>
+      <h1>
+        @include('my-name.html')
+      </h1>
+      <div class="tagline-bottom">Click on a letter of my name.</div>
+    </div>
+
     @include('about-this-design.html')
 
-    <div id='content'></div>
+    <div class='content-wrap'>
+      @include('header.html')
 
-    <script id="home-template" type="text/x-template">
-      @include('home.html')
-    </script>
+      <div id='content'></div>
 
-    <script id="about-template" type="text/x-template">
-      @include('about.html')
-    </script>
+      <script id="home-template" type="text/x-template">
+        @include('home.html')
+      </script>
 
-    <script id="portfolio-template" type="text/x-template">
-      @include('portfolio.html')
-    </script>
+      <script id="about-template" type="text/x-template">
+        @include('about.html')
+      </script>
 
-    <script id="resume-template" type="text/x-template">
-      @include('resume.html')
-    </script>
+      <script id="portfolio-template" type="text/x-template">
+        @include('portfolio.html')
+      </script>
+
+      <script id="resume-template" type="text/x-template">
+        @include('resume.html')
+      </script>
+    </div>
 
     <script src="/js/scripts.js"></script>
 
@@ -57,7 +68,6 @@
         if (ctx.init) {
           next();
         } else {
-          console.log(transitionTime);
           document.body.classList.add('is-transitioning-out');
           setTimeout(function(){
             document.body.classList.remove('is-transitioning-out');
@@ -71,10 +81,6 @@
       }
 
       function showHome(ctx) {
-        // !ctx.init tells render() not to
-        // add the .hide class so that the
-        // transition animation is ignored
-        // for the initial page
         render(template('home'), !ctx.init);
       }
 
@@ -96,15 +102,7 @@
 
       function render(html, hide) {
         var el = document.getElementById('content');
-        // if (hide) {
-          // el.classList.add('hide');
-          // setTimeout(function(){
-            // el.innerHTML = html;
-            // el.classList.remove('hide');
-          // }, 0);
-        // } else {
-          el.innerHTML = html;
-        // }
+        el.innerHTML = html;
       }
 
       function deactiveate() {
