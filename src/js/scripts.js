@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
   if (Modernizr.touchevents) {
-    actionString = 'Tap on a letter of my name.'
+    var ACTION_STRING = 'Tap on a letter of my name.'
   } else {
-    actionString = 'Click on a letter of my name.'
+    var ACTION_STRING = 'Click on a letter of my name.'
   }
 
   var body = document.body;
@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var Q = document.querySelector.bind(document);
   var QA = document.querySelectorAll.bind(document);
 
-  Q(".my-name-bottom").textContent = actionString;
+  Q(".my-name-bottom").textContent = ACTION_STRING;
+  Q(".tagline-bottom").textContent = ACTION_STRING;
 
   if (sessionStorage.getItem('theme') == null) {
     sessionStorage.setItem('theme', 'default');
@@ -65,8 +66,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (e.target.classList.contains('trigger-theme-select')) {
       body.classList.add('theme-select-is-active');
       Q('.theme-select .tagline-top').textContent('UI Developer');
-      Q('.theme-select .tagline-bottom').textContent(actionString);
+      Q('.theme-select .tagline-bottom').textContent(ACTION_STRING);
     };
+  });
+
+  Q('.trigger-theme-select').addEventListener('click', function() {
+    body.classList.add('theme-select-is-active');
+    Q('.theme-select .tagline-top').textContent('UI Developer');
+    Q('.theme-select .tagline-bottom').textContent(ACTION_STRING);
   });
 
   var nameLinks = QA('.my-name a');
@@ -78,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     nameLinks[i].addEventListener('mouseleave', function() {
       Q('.my-name .my-name-top').textContent = "UI Developer"
-      Q('.my-name .my-name-bottom').textContent = actionString;
+      Q('.my-name .my-name-bottom').textContent = ACTION_STRING;
     });
 
     nameLinks[i].addEventListener('click', function() {
