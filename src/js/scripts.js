@@ -114,4 +114,73 @@ document.addEventListener("DOMContentLoaded", function(event) {
     'this is a single index.html file. No images are used for any of the visual \n'+
     'effects, everything is done with CSS.'
   )
+
+  page.base('');
+  page('*', showActiveLink);
+  page('/', showHome);
+  page('/about', showAbout);
+  page('/portfolio', showPortfolio);
+  page('/resume', showResume);
+  page('*', notfound);
+  page({hashbang:true});
+
+  function showActiveLink(ctx, next) {
+    deactiveate();
+    a(ctx.path).classList.add('is-active');
+
+    var currentTheme = body.dataset.currentTheme;
+
+    var transitionTime;
+
+    switch(currentTheme) {
+      case 'swiss':
+        transitionTime = 300;
+        break;
+
+      default:
+          transitionTime = 150;
+    }
+
+    if (ctx.init) {
+      next();
+      scroll(0,0);
+    } else {
+      body.classList.add('is-transitioning-out');
+      setTimeout(function(){
+        body.classList.remove('is-transitioning-out');
+        body.classList.add('is-transitioning-in');
+        next();
+        scroll(0,0);
+        setTimeout(function(){
+          body.classList.remove('is-transitioning-in');
+        }, transitionTime);
+      }, transitionTime);
+    }
+  }
+
+  function showHome(ctx) { render(template('home'), !ctx.init); }
+  function showAbout(ctx) { render(template('about'), !ctx.init); }
+  function showPortfolio(ctx) { render(template('portfolio'), !ctx.init); }
+  function showResume(ctx) { render(template('resume'), !ctx.init); }
+  function notfound(ctx) { render(template('not-found'), !ctx.init); }
+
+  function render(html, hide) {
+    var el = document.getElementById('content');
+    el.innerHTML = html;
+  }
+
+  function deactiveate() {
+    var el = Q('.main-navigation .is-active')
+    if (el) el.classList.remove('is-active');
+  }
+
+  function a(href) {
+    return Q('[href="' + href + '"]');
+  }
+
+  function template(name) {
+    return document
+      .getElementById(name + '-template')
+      .innerHTML;
+  }
 });
