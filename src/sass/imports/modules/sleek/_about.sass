@@ -1,1 +1,39 @@
-[data-current-theme="skeu"]
+[data-current-theme="sleek"]
+  .about-top
+    max-width: 768px
+    margin: 0px auto
+
+  .about
+    h2, h3
+      font-size: 42px
+      text-align: center
+
+    h2, h3, h4
+      background: linear-gradient(to bottom, $neon-violet, $neon-blue)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+    h3
+      margin-top: 84px
+
+    h4
+      font-size: 24px
+      margin-bottom: 0px
+      line-height: 36px
+
+  .tools-intro
+    max-width: 768px
+    margin: 0px auto
+    margin-bottom: 64px
+
+  .tools
+    display: flex
+    flex-wrap: wrap
+
+  .tool
+    flex-grow: 1
+    width: 50%
+    padding: 12px 24px
+
+    +below($small-width)
+      width: 100%

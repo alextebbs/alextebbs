@@ -18,6 +18,11 @@
   #{$all-header-elements}
     font-weight: bold
 
+  +below($small-width)
+    .content-wrap
+      width: 272px
+      margin: 0px auto
+
   .swiss-grid
     position: fixed
     top: 0px
@@ -25,6 +30,14 @@
     bottom: 0px
     right: 0px
     pointer-events: none
+
+    +below($small-width)
+      right: auto
+      left: 50%
+      transform: translateX(-50%)
+      width: 272px
+      border-right: 1px solid black(0.05)
+      border-left: 1px solid black(0.05)
 
   .swiss-column
     width: 272px
@@ -34,3 +47,6 @@
     border-left: 1px solid black(0.05)
     float: left
     height: 100%
+
+    +below($small-width)
+      display: none

@@ -1,53 +1,67 @@
 [data-current-theme="sleek"]
-  .accessory-1
+  .accessory-1, .accessory-2
+    top: 0px
+    bottom: 0px
+    width: 120px
     position: fixed
-    top: 99px
-    pointer-events: none
-    width: 319px
-    border-top: 33px solid black(0.8)
-    border-left: 12px solid transparent
-    border-right: 12px solid transparent
-    border-bottom: none
-    left: 50%
-    transform: translateX(-50%)
-    z-index: 2
+    z-index: 100
+
+  .accessory-1
+    left: 0px
+    background: linear-gradient(to right, black(1), black(0.0))
+
+  .accessory-2
+    right: 0px
+    background: linear-gradient(to left, black(1), black(0.0))
+
+  .accessory-3
+    top: 0px
+    left: 0px
+    right: 0px
+    height: 18px
+    z-index: 100
+    position: fixed
+    background: linear-gradient(to bottom, black(1), black(0.0))
 
   .main-header
     position: fixed
     left: 0px
     right: 0px
     top: 0px
-    padding-top: 48px
-    padding-bottom: 24px
-    background: black(0.8)
-    background: linear-gradient(to bottom, black(1), black(0.8))
     z-index: 3
+    perspective: 500px
 
-    &:after
+    &:after, &:before
+      content: ''
+      z-index: 3
       position: absolute
       bottom: 0px
+      height: 1px
+
+    &:after
       right: 50%
       left: 0px
       margin-right: 160px
-      height: 1px
       background: linear-gradient(to right, $neon-pink, $neon-violet)
-      content: ''
 
     &:before
-      position: absolute
-      bottom: 0px
       left: 50%
       right: 0px
       margin-left: 160px
-      height: 1px
       background: linear-gradient(to left, $neon-pink, $neon-violet)
-      content: ''
 
   .main-header-inner
-    max-width: 1024px
-    margin: 0px auto
-    padding-left: 18px
-    padding-right: 18px
+    &:after
+      position: fixed
+      top: 90px
+      pointer-events: none
+      width: 306px
+      height: 52px
+      left: 50%
+      transform: rotateX(137deg) translateX(-50%)
+      z-index: 2
+      backdrop-filter: blur(5px)
+      content: ''
 
   .my-name
     position: absolute
@@ -59,6 +73,7 @@
     border-bottom: 1px solid $neon-violet
     width: 296px
     padding-bottom: 12px
+    z-index: 3
 
     &:after, &:before
       content: ''
@@ -112,25 +127,39 @@
     padding-left: 0px
     margin-left: 0px
     +clearfix
+    padding-top: 48px
+    padding-bottom: 24px
+    backdrop-filter: blur(5px)
+    padding-left: 18px
+    padding-right: 18px
 
     li
       display: inline-block
       text-transform: lowercase
       font-size: 24px
       width: 120px
-      background: linear-gradient(to bottom, $neon-blue, $neon-violet)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-      transition: all 0.2s
-
-      +hover, .is-active
-        background: none
-        -webkit-text-fill-color: currentcolor
-        color: $neon-blue
-        text-shadow: 0px 0px 24px $neon-blue
 
       &:nth-child(2)
         margin-right: 180px
 
       &:nth-child(3)
         margin-left: 180px
+
+      a
+        background: linear-gradient(to bottom, $neon-blue, $neon-violet)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        transition: all 0.2s
+        color: transparent
+
+        +hover
+          background: none
+          -webkit-text-fill-color: currentcolor
+          color: $neon-blue
+          text-shadow: 0px 0px 24px $neon-blue
+
+        &.is-active
+          background: none
+          -webkit-text-fill-color: currentcolor
+          color: $neon-blue
+          text-shadow: 0px 0px 24px $neon-blue

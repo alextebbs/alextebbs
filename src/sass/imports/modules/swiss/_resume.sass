@@ -1,1 +1,23 @@
-[data-current-theme="skeu"]
+[data-current-theme="swiss"]
+  .resume
+    border-top: 4px solid #000
+    width: 592px
+    padding-top: 72px
+
+    +below($small-width)
+      width: 272px
+
+    ul, p
+      margin-bottom: 48px
+
+    h4
+      margin-bottom: 12px
+
+      +above($small-width)
+        +clearfix
+
+        .name
+          float: left
+
+        .date
+          float: right

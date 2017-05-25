@@ -16,5 +16,19 @@ body[data-current-theme="minimal"]
       color: #fff
       border-color: #000
 
+  .text-container
+    ul
+      list-style: none
+
+      li
+        position: relative
+
+        &:before
+          content: '-'
+          position: absolute
+          top: 0px
+          margin-right: 8px
+          right: 100%
+
   h1, h2, h3, h4, h5
     font-weight: bold

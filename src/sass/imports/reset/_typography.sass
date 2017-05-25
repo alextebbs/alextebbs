@@ -24,6 +24,15 @@ body, #{$all-text-elements}
   #{$all-list-elements}
     margin-bottom: 24px
 
+  ul, ol
+    padding-left: 24px
+
+  ul
+    list-style: disc
+
+  ol
+    list-style: decimal
+
   // Setup header styles. Define these in config/typography.
   @for $i from 1 through length($all-header-elements)
     h#{$i}

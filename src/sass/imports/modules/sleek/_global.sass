@@ -1,16 +1,27 @@
 [data-current-theme="sleek"]
-  background: #000
   color: $neon-violet
+  background: darken($grey-1, 16%)
+
+  .text-container
+    #{$all-body-text-elements}, li
+      font-size: 24px
+      line-height: 36px
+      font-weight: 100
 
   *
     font-family: $gothic-font-stack
 
   .main-section
     padding-top: 240px
-    background: darken($grey-1, 16%)
+    max-width: 1024px
+    margin: 0px auto
+    padding-left: 24px
+    padding-right: 24px
 
   a
     color: $neon-blue
+    transition: text-shadow 0.2s
 
     +hover
-      color: $neon-pink
+      color: $neon-blue
+      text-shadow: 0px 0px 24px $neon-blue

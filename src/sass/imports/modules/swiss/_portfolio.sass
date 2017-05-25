@@ -57,6 +57,21 @@
       border-bottom: 2px solid
       font-weight: bold
 
+    +below($small-width)
+      h3:after
+        display: none
+
+      .meta-main
+        float: none
+
+      h3, .tags
+        display: block
+        margin-bottom: 0px
+
+      .see-more
+        display: inline-block
+        float: none
+
     +hover
       h3, .tags, .see-more
         color: red !important
