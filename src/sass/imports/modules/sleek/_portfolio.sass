@@ -26,13 +26,22 @@
         border-top: 12px solid darken($grey-1, 16%)
         z-index: 2
 
+        +below(700px)
+          border-width: 6px
+
       &:before
         left: 0px
         border-left: 12px solid darken($grey-1, 16%)
 
+        +below(700px)
+          border-width: 6px
+
       &:after
         right: 0px
         border-right: 12px solid darken($grey-1, 16%)
+
+        +below(700px)
+          border-width: 6px
 
   .portfolio
     h2
@@ -61,13 +70,22 @@
       border: 12px solid transparent
       border-bottom: 12px solid darken($grey-1, 16%)
 
+      +below(700px)
+        border-width: 6px
+
     &:before
       left: 0px
       border-left: 12px solid darken($grey-1, 16%)
 
+      +below(700px)
+        border-width: 6px
+
     &:after
       right: 0px
       border-right: 12px solid darken($grey-1, 16%)
+
+      +below(700px)
+        border-width: 6px
 
   .portfolio-item-meta
     margin-left: 24px
@@ -78,6 +96,16 @@
     border: 1px solid transparent
     border-top: none
 
+    +below(700px)
+      margin-left: 12px
+      margin-right: 12px
+
+    h3
+      float: left
+
+    p
+      float: right
+
     h3, p
       text-transform: uppercase
       font-size: 18px
@@ -85,11 +113,10 @@
       margin-bottom: 0px
       line-height: 32px
 
-    h3
-      float: left
-
-    p
-      float: right
+      +below(700px)
+        text-align: left
+        display: block
+        float: none
 
   .see-more
     display: none

@@ -1,18 +1,19 @@
 [data-current-theme="sleek"]
-  .accessory-1, .accessory-2
-    top: 0px
-    bottom: 0px
-    width: 120px
-    position: fixed
-    z-index: 100
+  +above(1200px)
+    .accessory-1, .accessory-2
+      top: 0px
+      bottom: 0px
+      width: 120px
+      position: fixed
+      z-index: 100
 
-  .accessory-1
-    left: 0px
-    background: linear-gradient(to right, black(1), black(0.0))
+    .accessory-1
+      left: 0px
+      background: linear-gradient(to right, black(1), black(0.0))
 
-  .accessory-2
-    right: 0px
-    background: linear-gradient(to left, black(1), black(0.0))
+    .accessory-2
+      right: 0px
+      background: linear-gradient(to left, black(1), black(0.0))
 
   .accessory-3
     top: 0px
@@ -30,6 +31,9 @@
     top: 0px
     z-index: 3
     perspective: 500px
+
+    +below(700px)
+      position: relative
 
     &:after, &:before
       content: ''
@@ -75,6 +79,9 @@
     padding-bottom: 12px
     z-index: 3
 
+    +below(700px)
+      margin-top: 20px
+
     &:after, &:before
       content: ''
       width: 30px
@@ -112,6 +119,10 @@
       -webkit-text-fill-color: transparent
       transition: all 0.2s
 
+      +below(700px)
+        font-size: 32px
+        line-height: 30px
+
       +hover
         background: none
         -webkit-text-fill-color: currentcolor
@@ -133,17 +144,41 @@
     padding-left: 18px
     padding-right: 18px
 
+    +below(700px)
+      padding-top: 12px
+      padding-bottom: 64px
+
     li
       display: inline-block
       text-transform: lowercase
       font-size: 24px
       width: 120px
 
+      +below(900px)
+        width: 100px
+
+      +below(700px)
+        width: auto
+        padding: 0px 6px
+        font-size: 20px
+
       &:nth-child(2)
         margin-right: 180px
 
+        +below(900px)
+          margin-right: 120px
+
+        +below(700px)
+          margin-right: 0px
+
       &:nth-child(3)
         margin-left: 180px
+
+        +below(900px)
+          margin-left: 120px
+
+        +below(700px)
+          margin-left: 0px
 
       a
         background: linear-gradient(to bottom, $neon-blue, $neon-violet)

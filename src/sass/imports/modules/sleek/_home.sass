@@ -5,6 +5,10 @@
     padding-left: 18px
     padding-right: 18px
 
+    +below(700px)
+      padding-left: 0px
+      padding-right: 0px
+
   .home-intro
     padding-bottom: 84px
 
@@ -17,6 +21,9 @@
       background: linear-gradient(to right, $neon-violet, $neon-pink)
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
+
+      +below($small-width)
+        font-size: 36px
 
       .css
         color: $neon-pink
@@ -43,6 +50,10 @@
       padding-right: 24px
       margin-bottom: 8px
 
+      +below(700px)
+        padding-left: 12px
+        padding-right: 12px
+
       a
         float: right
 
@@ -60,12 +71,14 @@
 
     ul
       display: flex
+      flex-wrap: wrap
       padding-left: 0px
 
     li
       text-align: center
       list-style: none
       flex-grow: 1
+      padding: 6px
 
       .label, .value
         display: block

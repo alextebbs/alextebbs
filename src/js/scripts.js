@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   page('/', showHome);
   page('/about', showAbout);
   page('/portfolio', showPortfolio);
+  page('/portfolio/tdecu', showTDECU);
   page('/resume', showResume);
   page('*', notfound);
   page({hashbang:true});
@@ -169,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function showAbout(ctx) { render(template('about'), !ctx.init); }
   function showPortfolio(ctx) { render(template('portfolio'), !ctx.init); }
   function showResume(ctx) { render(template('resume'), !ctx.init); }
+  function showTDECU(ctx) { render(template('tdecu'), !ctx.init); }
   function notfound(ctx) { render(template('not-found'), !ctx.init); }
 
   function render(html, hide) {

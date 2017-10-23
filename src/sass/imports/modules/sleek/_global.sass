@@ -1,12 +1,24 @@
+@keyframes hue-rotate
+  0%
+    filter: hue-rotate(0deg)
+
+  100%
+    filter: hue-rotate(360deg)
+
 [data-current-theme="sleek"]
   color: $neon-violet
   background: darken($grey-1, 16%)
+  animation: hue-rotate 120s infinite
 
   .text-container
     #{$all-body-text-elements}, li
       font-size: 24px
       line-height: 36px
       font-weight: 100
+
+      +below($small-width)
+        font-size: 20px
+        line-height: 30px
 
   *
     font-family: $gothic-font-stack
@@ -17,6 +29,9 @@
     margin: 0px auto
     padding-left: 24px
     padding-right: 24px
+
+    +below(700px)
+      padding-top: 90px
 
   a
     color: $neon-blue

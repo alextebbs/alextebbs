@@ -1,4 +1,33 @@
+@keyframes invert
+  0%
+    filter: invert(0%)
+    background: #fff
+
+  45%
+    filter: invert(0%) blur(0px)
+    background: #fff
+
+  47.5%
+    filter: invert(50%) blur(40px)
+
+  50%
+    filter: invert(100%) blur(0px)
+    background: #000
+
+  95%
+    filter: invert(100%) blur(0px)
+    background: #000
+
+  97.5%
+    filter: invert(50%) blur(40px)
+
+  100%
+    filter: invert(0%) blur(0px)
+    background: #fff
+
 [data-current-theme="brutalist"]
+  animation: invert 30s infinite
+
   *
     font-weight: bold
 

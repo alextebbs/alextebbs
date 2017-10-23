@@ -1,5 +1,5 @@
 [data-current-theme="skeu"]
-  .portfolio.main-section
+  .portfolio.main-section, .portfolio-detail.main-section
     background: linear-gradient(to bottom, $grey-4, $grey-1)
     padding-top: 72px
     border-top: 1px solid white(0.2)
@@ -19,6 +19,10 @@
 
       +below($large-width)
         margin-bottom: 18px
+
+  .portfolio-detail
+    img
+      max-width: 100%
 
   .portfolio-intro
     max-width: 768px
