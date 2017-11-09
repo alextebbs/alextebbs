@@ -71,20 +71,16 @@
       color: $teal
 
     ul
-      +clearfix
+      display: flex
+      justify-content: flex-end
+      flex-wrap: wrap
 
     li
       text-align: center
       position: relative
       padding-top: 48px
-
-      +above($small-width)
-        width: 50%
-        float: left
-        text-align: right
-
-      +above($medium-width)
-        width: 25%
+      padding-left: 48px
+      text-align: right
 
       &:before
         content: "\eae8"

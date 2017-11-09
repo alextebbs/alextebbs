@@ -3,7 +3,7 @@
     .accessory-1, .accessory-2
       top: 0px
       bottom: 0px
-      width: 120px
+      width: 180px
       position: fixed
       z-index: 100
 
@@ -56,7 +56,7 @@
 
   .main-header-inner
     &:after
-      position: fixed
+      position: absolute
       top: 90px
       pointer-events: none
       width: 306px
@@ -64,8 +64,12 @@
       left: 50%
       transform: rotateX(137deg) translateX(-50%)
       z-index: 2
-      backdrop-filter: blur(5px)
       content: ''
+      background: black(0.7)
+
+      @supports (backdrop-filter: blur(5px))
+        backdrop-filter: blur(5px)
+        background: black(0.2)
 
   .my-name
     position: absolute
@@ -140,9 +144,13 @@
     +clearfix
     padding-top: 48px
     padding-bottom: 24px
-    backdrop-filter: blur(5px)
     padding-left: 18px
     padding-right: 18px
+    background: black(0.7)
+
+    @supports (backdrop-filter: blur(5px))
+      backdrop-filter: blur(5px)
+      background: black(0.2)
 
     +below(700px)
       padding-top: 12px

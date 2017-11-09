@@ -77,6 +77,9 @@
     animation-duration: 7s
     font-family: $gothic-font-stack
 
+    +below($smaller-width)
+      bottom: 64px
+
     &:after
       content: "Hire an Alex Tebbs Today!"
       background-color: teal
@@ -223,6 +226,7 @@
 
     p
       font-size: 24px
+      line-height: 20px
 
     #{$all-header-elements}
       color: #f0f

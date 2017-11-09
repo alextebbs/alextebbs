@@ -43,27 +43,17 @@
       left: 50px
       bottom: 48px
 
-  // .my-name-bottom
-    position: fixed
-    right: 30px
-    bottom: 20px
-    transform-origin: bottom right
-    transform: rotate(90deg)
-    width: 1000px
-    text-align: right
-    font-size: 48px
-    z-index: 2
-    pointer-events: none
-
   .my-name-inner
     position: fixed
     top: 0px
     left: 0px
-    z-index: 1
+    z-index: 99
     font-size: 200px
     line-height: 150px
     font-weight: bold
     letter-spacing: -10px
+    color: #000
+    opacity: 0.3
 
     +below($small-width)
       font-size: 123px
@@ -82,11 +72,11 @@
         margin-left: 0px
 
     a
-      color: #eeeeee
+      color: #000000
       display: inline-block
 
       +hover
-        color: #999
+        color: #555555
 
     .space
       display: block

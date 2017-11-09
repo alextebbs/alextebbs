@@ -3,3 +3,4 @@ www/
 .sass-cache
 node_modules/
 components/
+shrinkwrap.yaml

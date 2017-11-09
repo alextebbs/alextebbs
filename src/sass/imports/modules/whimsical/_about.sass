@@ -5,7 +5,9 @@
   .about-section
     margin-bottom: 64px
     padding-bottom: 24px
-    border-bottom: 4px solid $grey-8
+
+    &:not(:last-child)
+      border-bottom: 4px solid $grey-8
 
     h2, h3
       position: relative
@@ -22,13 +24,77 @@
       font-size: 24px
       line-height: 34px
 
-  .tool
-    h4
-      transform: rotate(-4deg)
-      color: $red
+  //   h4
+  //     transform: rotate(-4deg)
+  //     color: $red
 
-    p
-      padding-left: 32px
-      padding-top: 18px
-      font-size: 20px
-      line-height: 28px
+  //   p
+  //     padding-left: 32px
+  //     padding-top: 18px
+  //     font-size: 20px
+  //     line-height: 28px
+
+  .tools
+    margin-left: -12px
+    margin-right: -12px
+    display: flex
+    flex-wrap: wrap
+
+  .tool
+    width: 50%
+    padding: 12px
+    flex-grow: 1
+
+    &:nth-child(1n)
+      .tool-inner
+        background: $blue
+
+    &:nth-child(2n)
+      .tool-inner
+        background: $green
+
+    &:nth-child(3n)
+      .tool-inner
+        background: $red
+
+    &:nth-child(4n)
+      .tool-inner
+        background: $purple
+
+    &:nth-child(5n)
+      .tool-inner
+        background: $teal
+
+    &:nth-child(5n)
+      .tool-inner
+        background: $orange
+
+    &:nth-child(6n)
+      .tool-inner
+        background: $blue
+
+    &:nth-child(7n)
+      .tool-inner
+        background: $green
+
+    +below($smaller-width)
+      padding: 0px
+      width: 100%
+      padding-bottom: 12px
+
+  .tool-inner
+    border-radius: 12px
+    padding: 18px
+    background: $blue
+    height: 100%
+
+    h4, p
+      margin-bottom: 0px
+      font-size: 24px
+      line-height: 34px
+
+    h4, p, a
+      color: #fff
+
+    a
+      animation: none !important

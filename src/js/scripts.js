@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       Q('.theme-select .tagline-bottom').textContent = this.dataset.themeDesc;
       Q('.theme-select .tagline-top').textContent = this.dataset.alexDesc;
 
-      body.classList.remove('first-time');
       changeTheme(newTheme);
     });
 
     themeLinks[i].addEventListener('click', function() {
       var newTheme = this.dataset.themeKey;
       changeTheme(newTheme);
+      body.classList.remove('first-time');
       body.classList.remove('theme-select-is-active');
     });
   };
@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   body.addEventListener('click', function(e) {
     if (e.target.classList.contains('trigger-theme-select')) {
       body.classList.add('theme-select-is-active');
+      body.classList.remove('about-this-design-is-active');
       Q('.theme-select .tagline-top').textContent('UI Developer');
       Q('.theme-select .tagline-bottom').textContent(ACTION_STRING);
     };
