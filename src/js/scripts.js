@@ -48,6 +48,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       changeTheme(newTheme);
     });
 
+    themeLinks[i].addEventListener('mouseleave', function() {
+      Q('.theme-select .tagline-bottom').textContent = ACTION_STRING;
+      Q('.theme-select .tagline-top').textContent = 'UI Developer';
+    });
+
     themeLinks[i].addEventListener('click', function() {
       var newTheme = this.dataset.themeKey;
       changeTheme(newTheme);
@@ -59,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   Q('.theme-select').addEventListener('mouseleave', function() {
     if (!body.classList.contains('first-time')) {
       body.classList.remove('theme-select-is-active');
+    } else {
+      // changeTheme('default');
     };
   });
 
