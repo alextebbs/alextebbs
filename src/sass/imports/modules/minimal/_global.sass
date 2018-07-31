@@ -4,8 +4,12 @@ body[data-current-theme="minimal"]
     font-size: 14px
     line-height: 24px
 
+  ::selection
+    background: #000
+    color: #fff
+
   .note
-    color: $neutral-grey-6
+    color: map-get($neutral-greys, 6)
 
   a
     border-bottom: 1px solid

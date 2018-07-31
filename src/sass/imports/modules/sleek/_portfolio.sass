@@ -13,17 +13,17 @@
           display: block
 
         .portfolio-item-meta
-          border-color: $neon-pink
+          border-color: c('neon-pink')
 
           *
-            color: $neon-blue
+            color: c('neon-blue')
 
       &:before, &:after
         content: ''
         position: absolute
         top: 0px
         border: 12px solid transparent
-        border-top: 12px solid darken($grey-1, 16%)
+        border-top: 12px solid darken(grey(1), 16%)
         z-index: 2
 
         +below(700px)
@@ -31,14 +31,14 @@
 
       &:before
         left: 0px
-        border-left: 12px solid darken($grey-1, 16%)
+        border-left: 12px solid darken(grey(1), 16%)
 
         +below(700px)
           border-width: 6px
 
       &:after
         right: 0px
-        border-right: 12px solid darken($grey-1, 16%)
+        border-right: 12px solid darken(grey(1), 16%)
 
         +below(700px)
           border-width: 6px
@@ -47,7 +47,7 @@
     h2
       font-size: 42px
       text-align: center
-      background: linear-gradient(to bottom, $neon-violet, $neon-blue)
+      background: linear-gradient(to bottom, c('neon-violet'), c('neon-blue'))
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
 
@@ -68,21 +68,21 @@
       position: absolute
       bottom: 0px
       border: 12px solid transparent
-      border-bottom: 12px solid darken($grey-1, 16%)
+      border-bottom: 12px solid darken(grey(1), 16%)
 
       +below(700px)
         border-width: 6px
 
     &:before
       left: 0px
-      border-left: 12px solid darken($grey-1, 16%)
+      border-left: 12px solid darken(grey(1), 16%)
 
       +below(700px)
         border-width: 6px
 
     &:after
       right: 0px
-      border-right: 12px solid darken($grey-1, 16%)
+      border-right: 12px solid darken(grey(1), 16%)
 
       +below(700px)
         border-width: 6px
@@ -126,7 +126,7 @@
     transform: translate(-50%, -50%)
     background: black(0.9)
     padding: 12px 24px
-    border: 1px solid $neon-pink
+    border: 1px solid c('neon-pink')
     text-transform: uppercase
     font-size: 24px
     font-weight: 100

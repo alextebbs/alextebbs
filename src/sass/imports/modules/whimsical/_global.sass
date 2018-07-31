@@ -1,21 +1,21 @@
 @keyframes colorswap
   0%
-    color: $blue
+    color: c('blue')
 
   20%
-    color: $teal
+    color: c('teal')
 
   40%
-    color: $purple
+    color: c('purple')
 
   60%
-    color: $orange
+    color: c('orange')
 
   80%
-    color: $red
+    color: c('red')
 
   100%
-    color: $blue
+    color: c('blue')
 
 @keyframes wiggle
   0%
@@ -44,7 +44,12 @@
     font-weight: bold
 
   #{$all-text-elements}
-    color: $grey-5
+    color: grey(5)
+
+  ::selection
+    background: rgba(c('purple'), 0.2)
+    background: c('purple')
+    color: #fff
 
   .text-container
     #{$all-body-text-elements}, li

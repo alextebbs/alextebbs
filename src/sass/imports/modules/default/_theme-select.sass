@@ -19,6 +19,10 @@
   display: none
   z-index: 9999
 
+  ::selection
+    background: #000
+    color: #fff
+
   .theme-select-is-active &
     display: block
 
@@ -29,7 +33,7 @@
     text-transform: uppercase !important
     letter-spacing: 3px !important
     font-size: 13px !important
-    color: $cool-grey-7 !important
+    color: map-get($cool-greys, 7) !important
     font-weight: 100 !important
 
   .tagline-bottom

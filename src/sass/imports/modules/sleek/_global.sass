@@ -6,8 +6,8 @@
     filter: hue-rotate(360deg)
 
 [data-current-theme="sleek"]
-  color: $neon-violet
-  background: darken($grey-1, 16%)
+  color: c('neon-violet')
+  background: darken(grey(1), 16%)
   animation: hue-rotate 120s infinite
 
   .text-container
@@ -34,9 +34,9 @@
       padding-top: 90px
 
   a
-    color: $neon-blue
+    color: c('neon-blue')
     transition: text-shadow 0.2s
 
     +hover
-      color: $neon-blue
-      text-shadow: 0px 0px 24px $neon-blue
+      color: c('neon-blue')
+      text-shadow: 0px 0px 24px c('neon-blue')

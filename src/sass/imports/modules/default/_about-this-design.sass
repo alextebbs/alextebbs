@@ -15,6 +15,10 @@
   transition: all 0.2s
   z-index: 999
 
+  ::selection
+    background: #000
+    color: #fff
+
   .first-time &
     bottom: 0px
 
@@ -85,19 +89,19 @@
     font-weight: 400 !important
 
   a
-    color: $blue !important
-    border-bottom: 1px solid $blue !important
+    color: c('blue') !important
+    border-bottom: 1px solid c('blue') !important
     text-decoration: none !important
 
     +hover
       border-bottom: none !important
       background: transparent !important
       font-family: $mono-font-stack !important
-      color: $blue !important
+      color: c('blue') !important
 
       *
         font-family: $mono-font-stack !important
-        color: $blue !important
+        color: c('blue') !important
         border-bottom: none !important
         background: transparent !important
         font-family: $mono-font-stack !important

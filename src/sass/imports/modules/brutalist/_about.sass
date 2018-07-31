@@ -1,27 +1,28 @@
 [data-current-theme="brutalist"]
   .about-section
-    margin-bottom: 120px
+    margin-bottom: bl(5)
 
     h3
       font-size: 38px
 
   +above($medium-width)
     .about-me
-      margin-right: 240px
+      margin-right: bl(10)
 
     .my-philosophy,
     .my-history
-      margin-left: 240px
+      margin-left: bl(10)
 
   .tools
-    margin-left: -24px
-    margin-right: -24px
+    margin-left: bl(-1)
+    margin-right: bl(-1)
+    margin-bottom: bl(3)
 
   .tool
     position: relative
     width: 320px
-    padding-left: 24px
-    padding-right: 24px
+    padding-left: bl(1)
+    padding-right: bl(1)
     float: left
 
     +hover
@@ -31,14 +32,14 @@
     h4
       position: absolute
       top: 0px
-      left: 24px
-      font-size: 48px
-      line-height: 48px
+      left: bl(1)
+      font-size: bl(2)
+      line-height: bl(2)
       color: #aaa
 
     p
-      margin-top: 24px
+      margin-top: bl(1)
       position: relative
       z-index: 3
-      font-size: 16px
-      line-height: 24px
+      font-size: $fs
+      line-height: bl(1)

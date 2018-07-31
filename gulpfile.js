@@ -1,41 +1,36 @@
-var requireDir = require('require-dir');
-
-// Require all tasks in gulpfile.js/tasks, including subfolders
-requireDir('./build/tasks', { recurse: true })
-
-var gulp         = require('gulp');
+var gulp        = require('gulp');
+var requireDir  = require('require-dir');
 var runSequence  = require('run-sequence');
-var fileinclude = require('gulp-file-include');
+var browserSync = require('browser-sync').create();
+
+requireDir('./build', { recurse: true })
 
 // Static server
 gulp.task('browser-sync', function() {
-    var browserSync  = require('browser-sync').create();
     browserSync.init({
         server: {
             baseDir: "./www/"
-        },
-        startPath: '/'
+        }
     });
-    gulp.watch("src/sass/**/*.{scss,sass}", ['do_sass']).on('change',  browserSync.reload);
-    gulp.watch("src/html/**/*.html", ['create_html']).on('change',  browserSync.reload);
-    gulp.watch("src/html/*.html", ['create_html']).on('change',  browserSync.reload);
-    gulp.watch("src/js/*.js", ['create_js']).on('change',  browserSync.reload);
-    gulp.watch("src/img/*/**", ['copy_images']).on('change',  browserSync.reload);
+
+    gulp.watch("src/sass/**/*.{sass,scss}", ['do_sass']).on('change',  browserSync.reload);
+    gulp.watch("src/html/**/*.{html,ejs}", ['do_html']).on('change',  browserSync.reload);
+    gulp.watch("src/js/**/*.js", ['do_js']).on('change',  browserSync.reload);
+    gulp.watch("src/img/**/*", ['do_images']).on('change',  browserSync.reload);
+    gulp.watch("src/fonts/**/*", ['do_fonts']).on('change',  browserSync.reload);
 });
 
-gulp.task('copy_images', function(){
-    return gulp.src('src/img/**')
-        .pipe(gulp.dest('www/img/'))
+gulp.task('bsreload', function(cb) {
+    browserSync.reload();
+    cb();
 });
 
-gulp.task('copy_fonts', function(){
-    return gulp.src('src/fonts/**')
-        .pipe(gulp.dest('www/fonts/'))
+gulp.task('build', function(cb){
+    runSequence('do_js','do_images','do_html', 'do_sass', 'do_fonts', cb)
+});
+gulp.task('run', function(cb){
+    runSequence('build', 'browser-sync', cb)
 });
 
-gulp.task('build', function(){
-    runSequence('create_html', 'copy_images', 'copy_fonts', 'do_sass', 'create_js', 'browser-sync');
-});
-
-gulp.task('default',['build']);
+gulp.task('default', ['run']);
 

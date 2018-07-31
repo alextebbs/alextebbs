@@ -46,13 +46,13 @@
       right: 50%
       left: 0px
       margin-right: 160px
-      background: linear-gradient(to right, $neon-pink, $neon-violet)
+      background: linear-gradient(to right, c('neon-pink'), c('neon-violet'))
 
     &:before
       left: 50%
       right: 0px
       margin-left: 160px
-      background: linear-gradient(to left, $neon-pink, $neon-violet)
+      background: linear-gradient(to left, c('neon-pink'), c('neon-violet'))
 
   .main-header-inner
     &:after
@@ -78,7 +78,7 @@
     text-align: center
     top: 24px
     font-size: 24px
-    border-bottom: 1px solid $neon-violet
+    border-bottom: 1px solid c('neon-violet')
     width: 296px
     padding-bottom: 12px
     z-index: 3
@@ -97,18 +97,18 @@
     &:after
       transform: rotate(-21deg)
       left: -7px
-      border-left: 1px solid $neon-violet
+      border-left: 1px solid c('neon-violet')
 
     &:before
       transform: rotate(21deg)
       right: -7px
-      border-right: 1px solid $neon-violet
+      border-right: 1px solid c('neon-violet')
 
     .my-name-top, .my-name-bottom
       text-transform: uppercase
       font-size: 14px
       letter-spacing: 2px
-      color: $neon-violet
+      color: c('neon-violet')
       font-weight: bold
 
     a
@@ -117,8 +117,8 @@
       font-weight: bold
       line-height: 48px
       letter-spacing: 2px
-      color: $neon-blue
-      background: linear-gradient(to bottom, $neon-blue, $neon-violet)
+      color: c('neon-blue')
+      background: linear-gradient(to bottom, c('neon-blue'), c('neon-violet'))
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
       transition: all 0.2s
@@ -130,8 +130,8 @@
       +hover
         background: none
         -webkit-text-fill-color: currentcolor
-        color: $neon-blue
-        text-shadow: 0px 0px 24px $neon-blue
+        color: c('neon-blue')
+        text-shadow: 0px 0px 24px c('neon-blue')
 
     .space
       width: 8px
@@ -189,7 +189,7 @@
           margin-left: 0px
 
       a
-        background: linear-gradient(to bottom, $neon-blue, $neon-violet)
+        background: linear-gradient(to bottom, c('neon-blue'), c('neon-violet'))
         -webkit-background-clip: text
         -webkit-text-fill-color: transparent
         transition: all 0.2s
@@ -198,11 +198,11 @@
         +hover
           background: none
           -webkit-text-fill-color: currentcolor
-          color: $neon-blue
-          text-shadow: 0px 0px 24px $neon-blue
+          color: c('neon-blue')
+          text-shadow: 0px 0px 24px c('neon-blue')
 
         &.is-active
           background: none
           -webkit-text-fill-color: currentcolor
-          color: $neon-blue
-          text-shadow: 0px 0px 24px $neon-blue
+          color: c('neon-blue')
+          text-shadow: 0px 0px 24px c('neon-blue')

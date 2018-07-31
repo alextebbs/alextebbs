@@ -7,7 +7,7 @@
     padding-bottom: 24px
 
     &:not(:last-child)
-      border-bottom: 4px solid $grey-8
+      border-bottom: 4px solid grey(8)
 
     h2, h3
       position: relative
@@ -15,7 +15,7 @@
       transform: rotate(-4deg)
       margin-bottom: 48px
       font-size: 38px
-      color: $blue
+      color: c('blue')
 
       +below($small-width)
         left: -0px
@@ -26,7 +26,7 @@
 
   //   h4
   //     transform: rotate(-4deg)
-  //     color: $red
+  //     color: c('red')
 
   //   p
   //     padding-left: 32px
@@ -47,35 +47,35 @@
 
     &:nth-child(1n)
       .tool-inner
-        background: $blue
+        background: c('blue')
 
     &:nth-child(2n)
       .tool-inner
-        background: $green
+        background: c('green')
 
     &:nth-child(3n)
       .tool-inner
-        background: $red
+        background: c('red')
 
     &:nth-child(4n)
       .tool-inner
-        background: $purple
+        background: c('purple')
 
     &:nth-child(5n)
       .tool-inner
-        background: $teal
+        background: c('teal')
 
     &:nth-child(5n)
       .tool-inner
-        background: $orange
+        background: c('orange')
 
     &:nth-child(6n)
       .tool-inner
-        background: $blue
+        background: c('blue')
 
     &:nth-child(7n)
       .tool-inner
-        background: $green
+        background: c('green')
 
     +below($smaller-width)
       padding: 0px
@@ -85,7 +85,7 @@
   .tool-inner
     border-radius: 12px
     padding: 18px
-    background: $blue
+    background: c('blue')
     height: 100%
 
     h4, p

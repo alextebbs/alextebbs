@@ -1,7 +1,7 @@
 // This file groups selectors together. Most useful for input elements
 
 $all-header-elements: h1, h2, h3, h4, h5, h6;
-$all-body-text-elements: p, menu, blockquote;
+$all-body-text-elements: p, menu, blockquote, caption, td, th;
 $all-list-elements: ul, ol, dl;
 
 // This is weird bc syntax errors

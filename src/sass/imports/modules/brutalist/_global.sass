@@ -28,10 +28,19 @@
 [data-current-theme="brutalist"]
   animation: invert 30s infinite
 
+  ::selection
+    background: #f0f
+    color: #fff
+
   *
     font-weight: bold
+    color: #000
 
   .text-container
+    #{$all-text-elements}
+      color: #000
+      font-weight: bold
+
     h2
       font-size: 64px
       letter-spacing: -3px

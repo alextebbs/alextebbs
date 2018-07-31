@@ -9,19 +9,19 @@
     height: 4px
 
   .accessory-1
-    background-color: $blue
+    background-color: c('blue')
 
   .accessory-2
-    background-color: $teal
+    background-color: c('teal')
 
   .accessory-3
-    background-color: $purple
+    background-color: c('purple')
 
   .accessory-4
-    background-color: $red
+    background-color: c('red')
 
   .accessory-5
-    background-color: $orange
+    background-color: c('orange')
 
   .main-header
     max-width: 960px
@@ -38,7 +38,7 @@
 
   .main-header-inner
     margin-left: 120px
-    border-bottom: 4px solid $grey-8
+    border-bottom: 4px solid grey(8)
     +clearfix
     padding-bottom: 24px
 
@@ -61,7 +61,7 @@
       margin-right: 24px
       border-radius: 50%
       top: 0px
-      background: $grey-8
+      background: grey(8)
 
       +below($small-width)
         height: 64px
@@ -78,7 +78,7 @@
     font-size: 12px
     text-transform: uppercase
     letter-spacing: 1px
-    color: $grey-7
+    color: grey(7)
 
   .my-name-inner
     font-size: 42px
@@ -89,7 +89,7 @@
       width: 10px
 
     a
-      color: $purple
+      color: c('purple')
       font-weight: bold
       transition: transform 0.2s
       display: inline-block
@@ -170,32 +170,32 @@
       &:nth-child(1)
 
         a
-          color: $teal
+          color: c('teal')
 
           &:before
-            color: $teal
+            color: c('teal')
             content: '\e902'
 
       &:nth-child(2)
         a
-          color: $blue
+          color: c('blue')
 
           &:before
-            color: $blue
+            color: c('blue')
             content: '\e971'
 
       &:nth-child(3)
         a
-          color: $red
+          color: c('red')
 
           &:before
-            color: $red
+            color: c('red')
             content: '\e9ae'
 
       &:nth-child(4)
         a
-          color: $orange
+          color: c('orange')
 
           &:before
-            color: $orange
+            color: c('orange')
             content: '\e923'
