@@ -1308,7 +1308,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   function a(href) {
-    return Q('[href="' + href + '"]');
+    return Q('.nav-link[href="' + href + '"]');
   }
 
   function template(name) {
